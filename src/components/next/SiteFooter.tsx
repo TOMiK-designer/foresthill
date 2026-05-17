@@ -24,15 +24,15 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <h4 className="font-serif text-lg mb-3">Zostaw opinię</h4>
-          <p className="text-sm opacity-80">
+          <FooterColumnTitle>Zostaw opinię</FooterColumnTitle>
+          <p className="mt-5 text-sm leading-relaxed opacity-80">
             Prosimy o zostawienie opinii po zakończeniu pobytu. To dla nas najpiękniejszy
             komplement.
           </p>
         </div>
         <div>
-          <h4 className="font-serif text-lg mb-3">Śledź nas</h4>
-          <div className="flex gap-3">
+          <FooterColumnTitle>Śledź nas</FooterColumnTitle>
+          <div className="mt-5 flex gap-3">
             <SocialLink href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr" label="Facebook">
               <Facebook className="h-5 w-5" />
             </SocialLink>
@@ -72,6 +72,15 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumnTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-4">
+      <h4 className="font-serif text-2xl leading-none md:text-3xl">{children}</h4>
+      <span className="h-px min-w-12 flex-1 bg-primary-foreground/25" />
+    </div>
   );
 }
 
