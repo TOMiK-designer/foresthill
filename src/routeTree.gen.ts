@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SwieradowRouteImport } from './routes/swieradow'
+import { Route as SosnowkaRouteImport } from './routes/sosnowka'
+import { Route as MrzezynoRouteImport } from './routes/mrzezyno'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SwieradowRoute = SwieradowRouteImport.update({
+  id: '/swieradow',
+  path: '/swieradow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SosnowkaRoute = SosnowkaRouteImport.update({
+  id: '/sosnowka',
+  path: '/sosnowka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MrzezynoRoute = MrzezynoRouteImport.update({
+  id: '/mrzezyno',
+  path: '/mrzezyno',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mrzezyno': typeof MrzezynoRoute
+  '/sosnowka': typeof SosnowkaRoute
+  '/swieradow': typeof SwieradowRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mrzezyno': typeof MrzezynoRoute
+  '/sosnowka': typeof SosnowkaRoute
+  '/swieradow': typeof SwieradowRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mrzezyno': typeof MrzezynoRoute
+  '/sosnowka': typeof SosnowkaRoute
+  '/swieradow': typeof SwieradowRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
+  id: '__root__' | '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MrzezynoRoute: typeof MrzezynoRoute
+  SosnowkaRoute: typeof SosnowkaRoute
+  SwieradowRoute: typeof SwieradowRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/swieradow': {
+      id: '/swieradow'
+      path: '/swieradow'
+      fullPath: '/swieradow'
+      preLoaderRoute: typeof SwieradowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sosnowka': {
+      id: '/sosnowka'
+      path: '/sosnowka'
+      fullPath: '/sosnowka'
+      preLoaderRoute: typeof SosnowkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mrzezyno': {
+      id: '/mrzezyno'
+      path: '/mrzezyno'
+      fullPath: '/mrzezyno'
+      preLoaderRoute: typeof MrzezynoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +104,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MrzezynoRoute: MrzezynoRoute,
+  SosnowkaRoute: SosnowkaRoute,
+  SwieradowRoute: SwieradowRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
