@@ -46,14 +46,14 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => handleDecision("accepted")}
-            className="rounded-full bg-cream px-5 py-2 text-sm font-medium text-primary transition-colors hover:bg-white"
+            className="glass-button rounded-full px-5 py-2 text-sm font-medium text-primary"
           >
             Akceptuję
           </button>
           <button
             type="button"
             onClick={() => handleDecision("rejected")}
-            className="rounded-full border border-primary-foreground/30 px-5 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/10"
+            className="glass-button glass-button-dark rounded-full px-5 py-2 text-sm font-medium"
           >
             Tylko niezbędne
           </button>

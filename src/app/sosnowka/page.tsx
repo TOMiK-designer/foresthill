@@ -187,7 +187,7 @@ export default function SosnowkaPage() {
               href="https://client6351.idobooking.com/book-now/index.php?currency=1=1&language=1=1&language=1&location=2855&from_own_button=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 font-medium text-primary transition-colors hover:bg-white"
+              className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
             >
               Przejdź do rezerwacji
               <ArrowRight className="h-4 w-4" />

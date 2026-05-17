@@ -72,10 +72,10 @@ export default function MrzezynoPage() {
         </h2>
         <p className="mb-8 text-foreground/75">Dołącz do naszej społeczności na Facebooku i Instagramie.</p>
         <div className="flex justify-center gap-4">
-          <a href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90">
+          <a href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="glass-button glass-button-dark inline-flex items-center gap-2 rounded-full px-6 py-3">
             <Facebook className="h-4 w-4" /> Facebook
           </a>
-          <a href="https://www.instagram.com/forest.hill.apartamenty?igsh=dzI5NHIyZTkycGh2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90">
+          <a href="https://www.instagram.com/forest.hill.apartamenty?igsh=dzI5NHIyZTkycGh2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="glass-button glass-button-dark inline-flex items-center gap-2 rounded-full px-6 py-3">
             <Instagram className="h-4 w-4" /> Instagram
           </a>
         </div>

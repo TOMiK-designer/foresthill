@@ -50,7 +50,7 @@ export default function HomePage() {
           </p>
           <a
             href="#apartamenty"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-cream px-7 py-3.5 font-medium text-primary transition-colors hover:bg-white"
+            className="glass-button mt-10 inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-medium text-primary"
           >
             Poznaj nasze apartamenty
             <ArrowRight className="h-4 w-4" />

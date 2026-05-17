@@ -28,7 +28,7 @@ export function ScrollToTopButton() {
       type="button"
       aria-label="Wróć na górę"
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:bottom-8 md:right-8 ${
+      className={`glass-button glass-button-dark fixed bottom-6 right-6 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:bottom-8 md:right-8 ${
         visible
           ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
           : "pointer-events-none translate-y-6 scale-90 opacity-0"

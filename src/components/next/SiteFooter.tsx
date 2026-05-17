@@ -99,7 +99,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-primary-foreground/20"
+      className="glass-button glass-button-dark inline-flex h-11 w-11 items-center justify-center rounded-full"
     >
       {children}
     </a>
