@@ -19,7 +19,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="px-3 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors rounded-md"
+              className="px-3 py-2 text-sm font-medium uppercase tracking-[0.2em] text-foreground/70 hover:text-primary transition-colors rounded-md"
               activeProps={{ className: "text-primary" }}
             >
               {item.label}
