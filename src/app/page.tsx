@@ -92,7 +92,7 @@ export default function HomePage() {
               <Link
                 key={loc.href}
                 href={loc.href}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+                className="interactive-card group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img

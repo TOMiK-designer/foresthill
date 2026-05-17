@@ -185,7 +185,7 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
             type="button"
             aria-label={`Powiększ zdjęcie: ${image.alt}`}
             onClick={() => setActiveIndex(index)}
-            className={`group relative h-full w-full overflow-hidden rounded-xl bg-muted text-left shadow-sm outline-none ring-primary/40 transition duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 md:rounded-2xl ${
+            className={`interactive-card group relative h-full w-full overflow-hidden rounded-xl bg-muted text-left shadow-sm outline-none ring-primary/40 focus-visible:ring-2 md:rounded-2xl ${
               index % 10 === 0 || index % 10 === 6 ? "md:col-span-2 md:row-span-2" : ""
             }`}
           >

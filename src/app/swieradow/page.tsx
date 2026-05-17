@@ -53,7 +53,7 @@ export default function SwieradowPage() {
       <section className="bg-secondary/40 py-20">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
           {highlights.map((h) => (
-            <div key={h.title} className="rounded-2xl bg-card p-8">
+            <div key={h.title} className="interactive-card rounded-2xl bg-card p-8 shadow-sm">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <h.icon className="h-6 w-6" />
               </div>

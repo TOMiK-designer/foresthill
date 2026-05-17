@@ -121,7 +121,7 @@ export default function SosnowkaPage() {
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((b) => (
-              <div key={b.label} className="flex min-h-28 items-center gap-4 rounded-xl bg-card p-6">
+              <div key={b.label} className="interactive-card flex min-h-28 items-center gap-4 rounded-xl bg-card p-6 shadow-sm">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <b.icon className="h-5 w-5" />
                 </div>
@@ -167,7 +167,7 @@ export default function SosnowkaPage() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {amenities.map((a) => (
-              <div key={a.text} className="flex items-center gap-3 rounded-lg bg-card px-5 py-4">
+              <div key={a.text} className="interactive-card flex items-center gap-3 rounded-lg bg-card px-5 py-4 shadow-sm">
                 <a.icon className="h-5 w-5 shrink-0 text-primary" />
                 <span className="text-sm text-foreground/85">{a.text}</span>
               </div>

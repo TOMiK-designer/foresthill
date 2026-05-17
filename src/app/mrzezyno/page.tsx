@@ -54,7 +54,7 @@ export default function MrzezynoPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
-              <div key={f.title} className="h-full rounded-2xl bg-card p-7">
+              <div key={f.title} className="interactive-card h-full rounded-2xl bg-card p-7 shadow-sm">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <f.icon className="h-6 w-6" />
                 </div>
