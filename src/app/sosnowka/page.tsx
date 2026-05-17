@@ -67,14 +67,14 @@ const galleryImages = [
   { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-szafa.webp", alt: "Sypialnia z drewnianą zabudową" },
   { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-jasna.webp", alt: "Jasna sypialnia apartamentu" },
   { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-lozko.webp", alt: "Łóżko w sypialni apartamentu" },
-  { src: "/assets/sosnowka/gallery/sosnowka-kawa-ekspres.webp", alt: "Ekspres do kawy w apartamencie" },
-  { src: "/assets/sosnowka/gallery/sosnowka-kawa-detal.webp", alt: "Kącik kawowy z detalami Forest Hill" },
-  { src: "/assets/sosnowka/gallery/sosnowka-polki-kubki.webp", alt: "Półka z kubkami w aneksie kuchennym" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-umywalka.webp", alt: "Łazienka z umywalką i lustrem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz.webp", alt: "Łazienka z dekoracyjnym obrazem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-fotel-balkon.webp", alt: "Fotel wypoczynkowy przy balkonie" },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-stol.webp", alt: "Część jadalniana i wypoczynkowa apartamentu" },
-  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-wide.webp", alt: "Szerokie ujęcie sypialni" },
+  { src: "/assets/sosnowka/gallery/sosnowka-kawa-ekspres.webp", alt: "Sypialnia z dużym łóżkiem i oknem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-kawa-detal.webp", alt: "Ekspres do kawy w apartamencie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-polki-kubki.webp", alt: "Kącik kawowy z detalami Forest Hill" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-umywalka.webp", alt: "Część dzienna z jadalnią i sofą" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz.webp", alt: "Półka z kubkami w aneksie kuchennym" },
+  { src: "/assets/sosnowka/gallery/sosnowka-fotel-balkon.webp", alt: "Łazienka z umywalką i lustrem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-stol.webp", alt: "Łazienka z dekoracyjnym obrazem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-wide.webp", alt: "Fotel wypoczynkowy przy balkonie" },
 ];
 
 export default function SosnowkaPage() {
