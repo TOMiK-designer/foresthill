@@ -51,7 +51,15 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Forest Hill Apartamenty. Wszelkie prawa zastrzeżone.</span>
-          <nav className="flex gap-5">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+            <a
+              href="https://tomreklamy.pl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Power by TOM WEBSITE PRO
+            </a>
             <Link href="/polityka-prywatnosci" className="hover:underline">
               Polityka prywatności
             </Link>
