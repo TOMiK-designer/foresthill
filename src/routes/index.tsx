@@ -4,7 +4,7 @@ import heroMain from "@/assets/hero-main.jpg";
 import heroSosnowka from "@/assets/hero-sosnowka.jpg";
 import heroSwieradow from "@/assets/hero-swieradow.jpg";
 import heroMrzezyno from "@/assets/hero-mrzezyno.jpg";
-import logoMain from "@/assets/logo-main.jpg";
+
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -50,11 +50,6 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto max-w-5xl h-full px-6 flex flex-col items-center justify-center text-center text-primary-foreground">
-          <img
-            src={logoMain}
-            alt="Forest Hill Apartamenty"
-            className="h-24 md:h-32 w-auto mb-8 rounded-md shadow-2xl"
-          />
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl">
             Twój drugi dom na szlaku karkonoskich
             <span className="italic"> i nadmorskich</span> wspomnień
