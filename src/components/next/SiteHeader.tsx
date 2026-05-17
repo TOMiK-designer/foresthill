@@ -11,9 +11,16 @@ const nav = [
   { href: "/mrzezyno", label: "Mrzeżyno" },
 ];
 
+const logosByPath: Record<string, string> = {
+  "/sosnowka": "/assets/logo-header-sosnowka.svg",
+  "/swieradow": "/assets/logo-header-swieradow.svg",
+  "/mrzezyno": "/assets/logo-header-mrzezyno.svg",
+};
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const logoSrc = logosByPath[pathname] ?? "/assets/logo-header.svg";
 
   useEffect(() => {
     setOpen(false);
@@ -32,9 +39,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-3" aria-label="Forest Hill Apartamenty">
           <img
-            src="/assets/logo-header.svg"
+            src={logoSrc}
             alt="Forest Hill Apartamenty"
-            className="h-11 w-auto sm:h-12"
+            className="h-11 w-auto max-w-[210px] object-contain sm:h-12 sm:max-w-[260px]"
           />
         </Link>
 
