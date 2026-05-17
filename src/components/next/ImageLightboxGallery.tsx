@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type GalleryImage = {
   src: string;
@@ -15,14 +15,38 @@ type ImageLightboxGalleryProps = {
 
 export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
   const activeImage = activeIndex === null ? null : images[activeIndex];
+  const hasManyImages = images.length > 1;
 
-  const showPrevious = () => {
+  const closeLightbox = useCallback(() => {
+    setActiveIndex(null);
+  }, []);
+
+  const showPrevious = useCallback(() => {
     setActiveIndex((current) => (current === null ? current : (current - 1 + images.length) % images.length));
-  };
+  }, [images.length]);
 
-  const showNext = () => {
+  const showNext = useCallback(() => {
     setActiveIndex((current) => (current === null ? current : (current + 1) % images.length));
+  }, [images.length]);
+
+  const handleTouchEnd = (touchEnd: number) => {
+    if (touchStart === null || !hasManyImages) {
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+
+    if (Math.abs(distance) > 50) {
+      if (distance > 0) {
+        showNext();
+      } else {
+        showPrevious();
+      }
+    }
+
+    setTouchStart(null);
   };
 
   useEffect(() => {
@@ -35,14 +59,14 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setActiveIndex(null);
+        closeLightbox();
       }
 
-      if (event.key === "ArrowLeft") {
+      if (event.key === "ArrowLeft" && hasManyImages) {
         showPrevious();
       }
 
-      if (event.key === "ArrowRight") {
+      if (event.key === "ArrowRight" && hasManyImages) {
         showNext();
       }
     };
@@ -53,7 +77,7 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [activeIndex]);
+  }, [activeIndex, closeLightbox, hasManyImages, showNext, showPrevious]);
 
   return (
     <>
@@ -87,55 +111,91 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
           role="dialog"
           aria-modal="true"
           aria-label={activeImage.alt}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 py-6 backdrop-blur-sm"
-          onClick={() => setActiveIndex(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/[0.92] px-4 py-4 text-white backdrop-blur-sm sm:px-6 sm:py-6"
+          onClick={closeLightbox}
         >
           <button
             type="button"
             aria-label="Zamknij podgląd"
-            onClick={() => setActiveIndex(null)}
-            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/12 text-white transition hover:bg-white/22 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+            onClick={closeLightbox}
+            className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/14 text-white shadow-lg backdrop-blur transition hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <X className="h-5 w-5" />
           </button>
 
-          <button
-            type="button"
-            aria-label="Poprzednie zdjęcie"
-            onClick={(event) => {
-              event.stopPropagation();
-              showPrevious();
-            }}
-            className="absolute left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/12 text-white transition hover:bg-white/22 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
+          {hasManyImages ? (
+            <button
+              type="button"
+              aria-label="Poprzednie zdjęcie"
+              onClick={(event) => {
+                event.stopPropagation();
+                showPrevious();
+              }}
+              className="absolute left-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/14 text-white shadow-lg backdrop-blur transition hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white md:flex"
+            >
+              <ChevronLeft className="h-7 w-7" />
+            </button>
+          ) : null}
 
-          <figure className="relative h-[82vh] w-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
-            <Image
-              src={activeImage.src}
-              alt={activeImage.alt}
-              fill
-              sizes="100vw"
-              priority
-              className="object-contain"
-            />
-            <figcaption className="absolute bottom-0 left-1/2 w-[calc(100%-2rem)] max-w-3xl -translate-x-1/2 rounded-full bg-black/45 px-5 py-3 text-center text-sm text-white backdrop-blur">
-              {activeImage.alt}
+          <figure
+            className="flex h-full max-h-[92vh] w-full max-w-6xl flex-col gap-4"
+            onClick={(event) => event.stopPropagation()}
+            onTouchStart={(event) => setTouchStart(event.changedTouches[0]?.clientX ?? null)}
+            onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
+          >
+            <div className="relative min-h-0 flex-1">
+              <Image
+                src={activeImage.src}
+                alt={activeImage.alt}
+                fill
+                sizes="100vw"
+                priority
+                className="object-contain"
+              />
+            </div>
+
+            <figcaption className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-center text-sm text-white shadow-lg backdrop-blur md:flex-row md:justify-between md:text-left">
+              <span>{activeImage.alt}</span>
+              <span className="shrink-0 text-xs uppercase tracking-[0.2em] text-white/70">
+                {(activeIndex ?? 0) + 1} / {images.length}
+              </span>
             </figcaption>
+
+            {hasManyImages ? (
+              <div className="flex justify-center gap-3 md:hidden">
+                <button
+                  type="button"
+                  aria-label="Poprzednie zdjęcie"
+                  onClick={showPrevious}
+                  className="flex h-11 w-16 items-center justify-center rounded-full bg-white/14 text-white backdrop-blur transition hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Następne zdjęcie"
+                  onClick={showNext}
+                  className="flex h-11 w-16 items-center justify-center rounded-full bg-white/14 text-white backdrop-blur transition hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
+            ) : null}
           </figure>
 
-          <button
-            type="button"
-            aria-label="Następne zdjęcie"
-            onClick={(event) => {
-              event.stopPropagation();
-              showNext();
-            }}
-            className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/12 text-white transition hover:bg-white/22 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+          {hasManyImages ? (
+            <button
+              type="button"
+              aria-label="Następne zdjęcie"
+              onClick={(event) => {
+                event.stopPropagation();
+                showNext();
+              }}
+              className="absolute right-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/14 text-white shadow-lg backdrop-blur transition hover:bg-white/24 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white md:flex"
+            >
+              <ChevronRight className="h-7 w-7" />
+            </button>
+          ) : null}
         </div>
       ) : null}
     </>
