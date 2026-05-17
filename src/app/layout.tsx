@@ -22,10 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl">
       <body>
-        <div className="min-h-screen flex flex-col bg-background text-foreground">
+        <div className="min-h-screen flex flex-col bg-primary text-foreground">
           <PageTransitions />
           <SiteHeader />
-          <main className="page-content flex-1">{children}</main>
+          <main className="page-content flex-1 bg-background">{children}</main>
           <SiteFooter />
           <CookieBanner />
           <ScrollReveal />
