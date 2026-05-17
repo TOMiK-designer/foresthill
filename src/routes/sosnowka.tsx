@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import hero from "@/assets/hero-sosnowka.jpg";
-import logo from "@/assets/logo-sosnowka.jpg";
+
 import logo5d from "@/assets/logo-5d.jpg";
 import apt1 from "@/assets/apt-sosnowka-1.jpg";
 import apt2 from "@/assets/apt-sosnowka-2.jpg";
@@ -64,7 +64,7 @@ function Page() {
         <img src={hero} alt="Widok na Karkonosze i Zalew Sosnówka" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60" />
         <div className="relative z-10 mx-auto max-w-5xl h-full px-6 flex flex-col items-center justify-center text-center text-primary-foreground">
-          <img src={logo} alt="Forest Hill Sosnówka" className="h-24 md:h-28 w-auto rounded-md shadow-xl mb-6" />
+          
           <p className="text-sm uppercase tracking-[0.3em] mb-3 opacity-90">Karkonosze</p>
           <h1 className="font-serif text-4xl md:text-6xl">Forest Hill Sosnówka</h1>
           <p className="mt-4 flex items-center gap-2 text-base md:text-lg opacity-90">

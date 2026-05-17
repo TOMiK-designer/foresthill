@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import hero from "@/assets/hero-mrzezyno.jpg";
-import logo from "@/assets/logo-mrzezyno.jpg";
+
 import { Instagram, Facebook, MapPin, Waves, Sun, TreePine, Bath } from "lucide-react";
 
 export const Route = createFileRoute("/mrzezyno")({
@@ -32,7 +32,7 @@ function Page() {
         <img src={hero} alt="Plaża w Mrzeżynie o zachodzie słońca" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         <div className="relative z-10 mx-auto max-w-5xl h-full px-6 flex flex-col items-center justify-center text-center text-primary-foreground">
-          <img src={logo} alt="Forest Hill Mrzeżyno" className="h-24 md:h-28 w-auto rounded-md shadow-xl mb-6" />
+          
           <p className="text-sm uppercase tracking-[0.3em] mb-3 opacity-90">Bałtyk</p>
           <h1 className="font-serif text-4xl md:text-6xl">Forest Hill Mrzeżyno</h1>
           <p className="mt-4 flex items-center gap-2 text-base md:text-lg opacity-90">
