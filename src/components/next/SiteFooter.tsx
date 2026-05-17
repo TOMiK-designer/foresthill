@@ -8,9 +8,9 @@ export function SiteFooter() {
         <div>
           <Link href="/" className="mb-5 inline-flex" aria-label="Forest Hill Apartamenty">
             <img
-              src="/assets/logo-header.svg"
+              src="/assets/logo-footer-white.svg"
               alt="Forest Hill Apartamenty"
-              className="h-14 w-auto rounded-md bg-primary-foreground/95 px-3 py-2"
+              className="h-16 w-auto"
             />
           </Link>
           <h3 className="font-serif text-2xl mb-3">Forest Hill Apartamenty</h3>
