@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Forest Hill Sosnówka — apartament nad Zalewem Sosnówka",
   description:
-    "Klimatyzowany apartament w kompleksie Lake Hill nad Zalewem Sosnówka. 38 m2, 2 pokoje, do 4 osób. Cisza, las i bliskość Karpacza.",
+    "Klimatyzowany apartament w kompleksie Lake Hill nad Zalewem Sosnówka. 38 m², 2 pokoje, do 4 osób. Cisza, las i bliskość Karpacza.",
 };
 
 const benefits = [
@@ -31,7 +31,7 @@ const benefits = [
 ];
 
 const facts = [
-  { label: "Metraż", value: "38 m2" },
+  { label: "Metraż", value: "38 m²" },
   { label: "Piętro", value: "1 (winda)" },
   { label: "Pokoje", value: "2 + łazienka" },
   { label: "Maks. osób", value: "4" },
