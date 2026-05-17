@@ -57,7 +57,7 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
 
   return (
     <>
-      <div className="grid auto-rows-[12rem] gap-3 sm:auto-rows-[14rem] md:grid-cols-3 md:auto-rows-[16rem] md:gap-4">
+      <div className="grid auto-rows-[10.5rem] grid-flow-dense gap-3 sm:auto-rows-[12rem] md:grid-cols-3 md:auto-rows-[13.5rem] md:gap-4">
         {images.map((image, index) => (
           <button
             key={image.src}
@@ -65,14 +65,14 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
             aria-label={`Powiększ zdjęcie: ${image.alt}`}
             onClick={() => setActiveIndex(index)}
             className={`group relative h-full w-full overflow-hidden rounded-xl bg-muted text-left shadow-sm outline-none ring-primary/40 transition duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 md:rounded-2xl ${
-              index % 9 === 0 || index % 9 === 5 ? "md:col-span-2 md:row-span-2" : ""
+              index % 10 === 0 || index % 10 === 6 ? "md:col-span-2 md:row-span-2" : ""
             }`}
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              sizes={index % 9 === 0 || index % 9 === 5 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+              sizes={index % 10 === 0 || index % 10 === 6 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
               className="object-cover transition duration-500 group-hover:scale-105"
             />
             <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
