@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles.css";
 import { CookieBanner } from "@/components/next/CookieBanner";
+import { PageTransitions } from "@/components/next/PageTransitions";
 import { SiteFooter } from "@/components/next/SiteFooter";
 import { SiteHeader } from "@/components/next/SiteHeader";
 
@@ -20,8 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pl">
       <body>
         <div className="min-h-screen flex flex-col bg-background text-foreground">
+          <PageTransitions />
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="page-content flex-1">{children}</main>
           <SiteFooter />
           <CookieBanner />
         </div>
