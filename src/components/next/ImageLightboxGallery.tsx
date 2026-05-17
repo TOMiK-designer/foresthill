@@ -194,7 +194,7 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
               alt={image.alt}
               fill
               sizes={index % 10 === 0 || index % 10 === 6 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
-              className="object-cover transition duration-500 group-hover:scale-105"
+              className="interactive-card-media object-cover"
             />
             <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
               <Expand className="h-4 w-4" />

@@ -147,6 +147,17 @@
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 22px 45px color-mix(in oklch, var(--color-primary) 16%, transparent);
   }
+
+  .interactive-card-media {
+    transform: scale(1);
+    transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .interactive-card:hover .interactive-card-media,
+  .interactive-card:focus-within .interactive-card-media {
+    transform: scale(1.04);
+  }
 }
 
 @keyframes page-enter {
@@ -207,7 +218,10 @@
   .scroll-reveal-item.is-visible,
   .interactive-card,
   .interactive-card:hover,
-  .interactive-card:focus-within {
+  .interactive-card:focus-within,
+  .interactive-card-media,
+  .interactive-card:hover .interactive-card-media,
+  .interactive-card:focus-within .interactive-card-media {
     animation: none;
     opacity: 1;
     transform: none;
