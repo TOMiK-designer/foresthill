@@ -51,6 +51,31 @@ const amenities = [
   { icon: Car, text: "Stacje ładowania aut elektrycznych" },
 ];
 
+const galleryImages = [
+  { src: "/assets/sosnowka/gallery/sosnowka-budynek-lake-hill.webp", alt: "Budynki Lake Hill w Sosnówce" },
+  { src: "/assets/sosnowka/gallery/sosnowka-widok-na-sniezke.webp", alt: "Widok na Śnieżkę z okolic Sosnówki" },
+  { src: "/assets/sosnowka/gallery/sosnowka-balkon-las.webp", alt: "Balkon apartamentu z widokiem na las" },
+  { src: "/assets/sosnowka/gallery/sosnowka-widok-zalew.webp", alt: "Panorama Zalewu Sosnówka i okolicznych wzgórz" },
+  { src: "/assets/sosnowka/gallery/sosnowka-resort-zalew.webp", alt: "Widok na kompleks apartamentowy nad Zalewem Sosnówka" },
+  { src: "/assets/sosnowka/gallery/sosnowka-stol-zegar.webp", alt: "Nakryty stół w apartamencie Forest Hill Sosnówka" },
+  { src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp", alt: "Dekoracja Forest Hill w apartamencie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-balkon.webp", alt: "Salon z wyjściem na balkon" },
+  { src: "/assets/sosnowka/gallery/sosnowka-strefa-tv.webp", alt: "Strefa telewizyjna i kącik kawowy" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-kuchnia.webp", alt: "Salon z aneksem kuchennym" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-okno.webp", alt: "Sypialnia z dużym oknem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-szafa.webp", alt: "Sypialnia z drewnianą zabudową" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-jasna.webp", alt: "Jasna sypialnia apartamentu" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-lozko.webp", alt: "Łóżko w sypialni apartamentu" },
+  { src: "/assets/sosnowka/gallery/sosnowka-kawa-ekspres.webp", alt: "Ekspres do kawy w apartamencie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-kawa-detal.webp", alt: "Kącik kawowy z detalami Forest Hill" },
+  { src: "/assets/sosnowka/gallery/sosnowka-polki-kubki.webp", alt: "Półka z kubkami w aneksie kuchennym" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-umywalka.webp", alt: "Łazienka z umywalką i lustrem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz.webp", alt: "Łazienka z dekoracyjnym obrazem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-fotel-balkon.webp", alt: "Fotel wypoczynkowy przy balkonie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-stol.webp", alt: "Część jadalniana i wypoczynkowa apartamentu" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-wide.webp", alt: "Szerokie ujęcie sypialni" },
+];
+
 export default function SosnowkaPage() {
   return (
     <>
@@ -130,13 +155,15 @@ export default function SosnowkaPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid gap-4 md:grid-cols-3">
-          {["apt-sosnowka-1.jpg", "apt-sosnowka-2.jpg", "apt-sosnowka-3.jpg", "apt-sosnowka-1.jpg"].map((image, index) => (
+        <div className="grid auto-rows-[18rem] gap-4 md:grid-cols-3 md:auto-rows-[20rem]">
+          {galleryImages.map((image, index) => (
             <img
-              key={`${image}-${index}`}
-              src={`/assets/${image}`}
-              alt="Wnętrze apartamentu Forest Hill Sosnówka"
-              className={`h-72 w-full rounded-2xl object-cover md:h-96 ${index === 0 || index === 3 ? "md:col-span-2" : ""}`}
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              className={`h-full w-full rounded-2xl object-cover ${
+                index % 9 === 0 || index % 9 === 5 ? "md:col-span-2 md:row-span-2" : ""
+              }`}
             />
           ))}
         </div>
