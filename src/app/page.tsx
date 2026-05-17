@@ -15,6 +15,7 @@ const locations = [
     name: "Świeradów-Zdrój",
     region: "Góry Izerskie",
     image: "/assets/hero-swieradow.jpg",
+    soon: true,
     description:
       "Wkrótce apartament w Izerskim Resorcie, tuż obok wieży Sky Walk. Sauna, narciarnia, rowerownia.",
   },
@@ -23,6 +24,7 @@ const locations = [
     name: "Mrzeżyno",
     region: "Bałtyk",
     image: "/assets/hero-mrzezyno.jpg",
+    soon: true,
     description:
       "Wkrótce apartament w Resorcie Hevenia, kilka kroków od plaży. Baseny, sauny, taras na dachu.",
   },
@@ -101,6 +103,11 @@ export default function HomePage() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
+                  {loc.soon ? (
+                    <span className="absolute right-4 top-4 rounded-full bg-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary shadow-lg shadow-black/15">
+                      Już wkrótce
+                    </span>
+                  ) : null}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
                     <p className="mb-1 text-xs uppercase tracking-[0.2em] opacity-80">{loc.region}</p>
                     <h3 className="font-serif text-3xl">Forest Hill {loc.name}</h3>
