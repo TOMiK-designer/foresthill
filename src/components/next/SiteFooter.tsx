@@ -49,23 +49,25 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-primary-foreground/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Forest Hill Apartamenty. Wszelkie prawa zastrzeżone.</span>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-primary-foreground/75 md:flex-row md:items-center md:justify-between">
+          <span className="leading-relaxed">
+            © {new Date().getFullYear()} Forest Hill Apartamenty. Wszelkie prawa zastrzeżone.
+          </span>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 leading-relaxed">
+            <Link href="/polityka-prywatnosci" className="underline-offset-4 hover:underline">
+              Polityka prywatności
+            </Link>
+            <Link href="/polityka-cookies" className="underline-offset-4 hover:underline">
+              Polityka cookies
+            </Link>
             <a
               href="https://tomreklamy.pl"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="underline-offset-4 hover:underline"
             >
               Power by TOM WEBSITE PRO
             </a>
-            <Link href="/polityka-prywatnosci" className="hover:underline">
-              Polityka prywatności
-            </Link>
-            <Link href="/polityka-cookies" className="hover:underline">
-              Polityka cookies
-            </Link>
           </nav>
         </div>
       </div>
