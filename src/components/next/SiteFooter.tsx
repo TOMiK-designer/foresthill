@@ -15,8 +15,12 @@ export function SiteFooter() {
           </Link>
           <h3 className="font-serif text-2xl mb-3">Forest Hill Apartamenty</h3>
           <p className="text-sm leading-relaxed opacity-80">
-            Twój drugi dom na szlaku karkonoskich i nadmorskich wspomnień. Sosnówka ·
-            Świeradów-Zdrój · Mrzeżyno.
+            Twój drugi dom na szlaku karkonoskich i nadmorskich wspomnień.{" "}
+            <FooterTextLink href="/sosnowka">Sosnówka</FooterTextLink>
+            {" · "}
+            <FooterTextLink href="/swieradow">Świeradów-Zdrój</FooterTextLink>
+            {" · "}
+            <FooterTextLink href="/mrzezyno">Mrzeżyno</FooterTextLink>.
           </p>
         </div>
         <div>
@@ -80,5 +84,13 @@ function SocialLink({
     >
       {children}
     </a>
+  );
+}
+
+function FooterTextLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="underline-offset-4 transition-opacity hover:opacity-100 hover:underline">
+      {children}
+    </Link>
   );
 }
