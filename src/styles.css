@@ -104,6 +104,28 @@
   .page-content img {
     animation: image-soft-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+
+  .scroll-reveal-item {
+    opacity: 0;
+    transform: translateY(34px) scale(0.985);
+    transition:
+      opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .scroll-reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .scroll-reveal-item:nth-child(2n) {
+    transition-delay: 70ms;
+  }
+
+  .scroll-reveal-item:nth-child(3n) {
+    transition-delay: 120ms;
+  }
 }
 
 @keyframes page-enter {
@@ -159,7 +181,12 @@
   body.page-is-leaving .page-content,
   .page-content > section,
   .page-content > article,
-  .page-content img {
+  .page-content img,
+  .scroll-reveal-item,
+  .scroll-reveal-item.is-visible {
     animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
