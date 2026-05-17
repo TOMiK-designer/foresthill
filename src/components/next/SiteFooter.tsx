@@ -6,6 +6,13 @@ export function SiteFooter() {
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
         <div>
+          <Link href="/" className="mb-5 inline-flex" aria-label="Forest Hill Apartamenty">
+            <img
+              src="/assets/logo-header.svg"
+              alt="Forest Hill Apartamenty"
+              className="h-14 w-auto rounded-md bg-primary-foreground/95 px-3 py-2"
+            />
+          </Link>
           <h3 className="font-serif text-2xl mb-3">Forest Hill Apartamenty</h3>
           <p className="text-sm leading-relaxed opacity-80">
             Twój drugi dom na szlaku karkonoskich i nadmorskich wspomnień. Sosnówka ·
