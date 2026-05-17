@@ -92,7 +92,7 @@ export default function HomePage() {
               <Link
                 key={loc.href}
                 href={loc.href}
-                className="group block overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
@@ -106,9 +106,9 @@ export default function HomePage() {
                     <h3 className="font-serif text-3xl">Forest Hill {loc.name}</h3>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <p className="text-sm leading-relaxed text-foreground/75">{loc.description}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                  <span className="ml-auto mt-auto inline-flex items-center gap-2 pt-5 text-right text-sm font-medium text-primary">
                     Zobacz apartament
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
