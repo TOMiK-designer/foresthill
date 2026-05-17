@@ -1,13 +1,42 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const SELECTOR =
-  ".page-content > section, .page-content > article, .scroll-reveal, .page-content .bg-card";
+const SELECTOR = [
+  ".page-content > section",
+  ".page-content > article",
+  ".page-content h1",
+  ".page-content h2",
+  ".page-content h3",
+  ".page-content p",
+  ".page-content li",
+  ".page-content dl",
+  ".page-content dt",
+  ".page-content dd",
+  ".page-content img",
+  ".page-content a",
+  ".page-content button",
+  ".page-content .bg-card",
+  ".page-content .grid > *",
+  "footer img",
+  "footer h3",
+  "footer h4",
+  "footer p",
+  "footer a",
+  "footer nav",
+  ".scroll-reveal",
+].join(", ");
 
 export function ScrollReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR));
+    const elements = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR)).filter(
+      (element) =>
+        !element.closest("[data-no-scroll-reveal]") &&
+        !element.classList.contains("scroll-reveal-skip"),
+    );
 
     elements.forEach((element) => {
       element.classList.add("scroll-reveal-item");
@@ -29,8 +58,11 @@ export function ScrollReveal() {
 
     return () => {
       observer.disconnect();
+      elements.forEach((element) => {
+        element.classList.remove("scroll-reveal-item", "is-visible");
+      });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
