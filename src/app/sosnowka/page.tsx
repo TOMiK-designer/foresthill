@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ImageLightboxGallery } from "@/components/next/ImageLightboxGallery";
 import {
   ArrowRight,
   Bath,
@@ -155,18 +156,7 @@ export default function SosnowkaPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid auto-rows-[18rem] gap-4 md:grid-cols-3 md:auto-rows-[20rem]">
-          {galleryImages.map((image, index) => (
-            <img
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-              className={`h-full w-full rounded-2xl object-cover ${
-                index % 9 === 0 || index % 9 === 5 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
-            />
-          ))}
-        </div>
+        <ImageLightboxGallery images={galleryImages} />
       </section>
 
       <section className="bg-secondary/40 py-20 md:py-28">
