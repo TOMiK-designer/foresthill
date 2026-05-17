@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SwieradowRouteImport } from './routes/swieradow'
 import { Route as SosnowkaRouteImport } from './routes/sosnowka'
+import { Route as PolitykaPrywatnosciRouteImport } from './routes/polityka-prywatnosci'
+import { Route as PolitykaCookiesRouteImport } from './routes/polityka-cookies'
 import { Route as MrzezynoRouteImport } from './routes/mrzezyno'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +24,16 @@ const SwieradowRoute = SwieradowRouteImport.update({
 const SosnowkaRoute = SosnowkaRouteImport.update({
   id: '/sosnowka',
   path: '/sosnowka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitykaPrywatnosciRoute = PolitykaPrywatnosciRouteImport.update({
+  id: '/polityka-prywatnosci',
+  path: '/polityka-prywatnosci',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitykaCookiesRoute = PolitykaCookiesRouteImport.update({
+  id: '/polityka-cookies',
+  path: '/polityka-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MrzezynoRoute = MrzezynoRouteImport.update({
@@ -38,12 +50,16 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/mrzezyno': typeof MrzezynoRoute
+  '/polityka-cookies': typeof PolitykaCookiesRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
   '/sosnowka': typeof SosnowkaRoute
   '/swieradow': typeof SwieradowRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/mrzezyno': typeof MrzezynoRoute
+  '/polityka-cookies': typeof PolitykaCookiesRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
   '/sosnowka': typeof SosnowkaRoute
   '/swieradow': typeof SwieradowRoute
 }
@@ -51,20 +67,43 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/mrzezyno': typeof MrzezynoRoute
+  '/polityka-cookies': typeof PolitykaCookiesRoute
+  '/polityka-prywatnosci': typeof PolitykaPrywatnosciRoute
   '/sosnowka': typeof SosnowkaRoute
   '/swieradow': typeof SwieradowRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
+  fullPaths:
+    | '/'
+    | '/mrzezyno'
+    | '/polityka-cookies'
+    | '/polityka-prywatnosci'
+    | '/sosnowka'
+    | '/swieradow'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
-  id: '__root__' | '/' | '/mrzezyno' | '/sosnowka' | '/swieradow'
+  to:
+    | '/'
+    | '/mrzezyno'
+    | '/polityka-cookies'
+    | '/polityka-prywatnosci'
+    | '/sosnowka'
+    | '/swieradow'
+  id:
+    | '__root__'
+    | '/'
+    | '/mrzezyno'
+    | '/polityka-cookies'
+    | '/polityka-prywatnosci'
+    | '/sosnowka'
+    | '/swieradow'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MrzezynoRoute: typeof MrzezynoRoute
+  PolitykaCookiesRoute: typeof PolitykaCookiesRoute
+  PolitykaPrywatnosciRoute: typeof PolitykaPrywatnosciRoute
   SosnowkaRoute: typeof SosnowkaRoute
   SwieradowRoute: typeof SwieradowRoute
 }
@@ -83,6 +122,20 @@ declare module '@tanstack/react-router' {
       path: '/sosnowka'
       fullPath: '/sosnowka'
       preLoaderRoute: typeof SosnowkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/polityka-prywatnosci': {
+      id: '/polityka-prywatnosci'
+      path: '/polityka-prywatnosci'
+      fullPath: '/polityka-prywatnosci'
+      preLoaderRoute: typeof PolitykaPrywatnosciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/polityka-cookies': {
+      id: '/polityka-cookies'
+      path: '/polityka-cookies'
+      fullPath: '/polityka-cookies'
+      preLoaderRoute: typeof PolitykaCookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mrzezyno': {
@@ -105,9 +158,21 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MrzezynoRoute: MrzezynoRoute,
+  PolitykaCookiesRoute: PolitykaCookiesRoute,
+  PolitykaPrywatnosciRoute: PolitykaPrywatnosciRoute,
   SosnowkaRoute: SosnowkaRoute,
   SwieradowRoute: SwieradowRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

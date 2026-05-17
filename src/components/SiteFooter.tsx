@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Star } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
@@ -51,8 +52,16 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-primary-foreground/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-xs opacity-70">
-          © {new Date().getFullYear()} Forest Hill Apartamenty. Wszelkie prawa zastrzeżone.
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs opacity-70">
+          <span>© {new Date().getFullYear()} Forest Hill Apartamenty. Wszelkie prawa zastrzeżone.</span>
+          <nav className="flex gap-5">
+            <Link to="/polityka-prywatnosci" className="hover:opacity-100 hover:underline">
+              Polityka prywatności
+            </Link>
+            <Link to="/polityka-cookies" className="hover:opacity-100 hover:underline">
+              Polityka cookies
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
