@@ -94,7 +94,7 @@ export default function MrzezynoPage() {
         <ImageLightboxGallery images={galleryImages} />
       </section>
 
-      <section className="border-t border-primary/10 bg-secondary/35 py-16 text-center md:py-20">
+      <section className="bg-secondary/50 py-16 text-center md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="font-serif mb-4 text-3xl text-primary md:text-4xl">
             Śledź nas i obserwuj postępy prac wykończeniowych
