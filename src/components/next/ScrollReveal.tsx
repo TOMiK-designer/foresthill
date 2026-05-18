@@ -32,6 +32,9 @@ export function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
+    const isSoftRevealPage = pathname === "/sosnowka";
+    document.body.dataset.scrollRevealTone = isSoftRevealPage ? "soft" : "default";
+
     const elements = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR)).filter(
       (element) =>
         !element.closest("[data-no-scroll-reveal]") &&
@@ -48,10 +51,15 @@ export function ScrollReveal() {
           entry.target.classList.toggle("is-visible", entry.isIntersecting);
         });
       },
-      {
-        rootMargin: "-8% 0px -12% 0px",
-        threshold: 0.12,
-      },
+      isSoftRevealPage
+        ? {
+            rootMargin: "-3% 0px -8% 0px",
+            threshold: 0.08,
+          }
+        : {
+            rootMargin: "-8% 0px -12% 0px",
+            threshold: 0.12,
+          },
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -61,6 +69,7 @@ export function ScrollReveal() {
       elements.forEach((element) => {
         element.classList.remove("scroll-reveal-item", "is-visible");
       });
+      delete document.body.dataset.scrollRevealTone;
     };
   }, [pathname]);
 
