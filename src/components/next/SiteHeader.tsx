@@ -20,6 +20,7 @@ const logosByPath: Record<string, string> = {
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const logoSrc = logosByPath[pathname] ?? "/assets/logo-header.svg";
 
   useEffect(() => {
@@ -34,8 +35,25 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const updateScrolled = () => {
+      setScrolled(window.scrollY > 12);
+    };
+
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateScrolled);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-border/60 backdrop-blur transition-colors duration-500 ${
+        scrolled ? "bg-background/80" : "bg-background/60"
+      }`}
+    >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-3" aria-label="Forest Hill Apartamenty">
           <img
