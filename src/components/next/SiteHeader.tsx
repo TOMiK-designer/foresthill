@@ -41,7 +41,7 @@ export function SiteHeader() {
           <img
             src={logoSrc}
             alt="Forest Hill Apartamenty"
-            className="h-11 w-auto max-w-[210px] object-contain sm:h-12 sm:max-w-[260px]"
+            className="h-12 w-auto max-w-[225px] object-contain sm:h-12 sm:max-w-[260px]"
           />
         </Link>
 
