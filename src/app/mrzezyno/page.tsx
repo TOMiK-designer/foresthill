@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ImageLightboxGallery } from "@/components/next/ImageLightboxGallery";
 import { Bath, Facebook, Instagram, MapPin, Sun, TreePine, Waves } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -12,6 +13,21 @@ const features = [
   { icon: Waves, title: "Baseny i sauny", text: "Dostęp do basenu zewnętrznego, wewnętrznego, strefy saun i jacuzzi." },
   { icon: Sun, title: "Taras na dachu", text: "Leżaki i widok na morze. Twoja prywatna przestrzeń na słońce." },
   { icon: TreePine, title: "Cisza i natura", text: "Szeroka plaża tuż obok, pachnący las i kojący szum fal." },
+];
+
+const galleryImages = [
+  {
+    src: "/assets/mrzezyno/gallery/mrzezyno-strefa-basenowa-hevenia.webp",
+    alt: "Strefa basenowa i wellness w Resorcie Hevenia",
+  },
+  {
+    src: "/assets/mrzezyno/gallery/mrzezyno-resort-hevenia.webp",
+    alt: "Budynek Resortu Hevenia w Mrzeżynie",
+  },
+  {
+    src: "/assets/mrzezyno/gallery/mrzezyno-apartamenty-wsrod-sosen.webp",
+    alt: "Apartamenty Hevenia pośród nadmorskich sosen",
+  },
 ];
 
 export default function MrzezynoPage() {
@@ -64,6 +80,18 @@ export default function MrzezynoPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Galeria</p>
+          <h2 className="font-serif text-3xl text-primary md:text-5xl">Mrzeżyno w kadrach</h2>
+          <p className="mt-5 text-foreground/70">
+            Zobacz Resort Hevenia, strefę wellness oraz otoczenie apartamentów pośród nadmorskich sosen.
+          </p>
+        </div>
+
+        <ImageLightboxGallery images={galleryImages} />
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
