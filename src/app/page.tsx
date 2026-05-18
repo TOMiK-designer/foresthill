@@ -43,8 +43,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-72 bg-gradient-to-b from-transparent via-background/70 to-background" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <h1 className="font-serif max-w-4xl text-4xl leading-[1.05] md:text-6xl lg:text-7xl">
-            Twój drugi dom na szlaku karkonoskich
-            <span className="italic"> i nadmorskich</span> wspomnień
+            Twój drugi dom na szlaku <span className="italic">karkonoskich i nadmorskich</span> wspomnień
           </h1>
           <p className="mt-6 font-serif text-lg italic opacity-90 md:text-2xl">
             Są miejsca, do których przyjeżdża się raz. Są takie, do których się wraca.
