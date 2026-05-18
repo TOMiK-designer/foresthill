@@ -180,6 +180,27 @@
     box-shadow: 0 22px 45px color-mix(in oklch, var(--color-primary) 16%, transparent);
   }
 
+  .interactive-card.scroll-reveal-item {
+    opacity: 0;
+    transform: translateY(18px) scale(0.996);
+    transition:
+      opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .interactive-card.scroll-reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .interactive-card.scroll-reveal-item.is-visible:hover,
+  .interactive-card.scroll-reveal-item.is-visible:focus-within {
+    transform: translateY(-6px) scale(1.01);
+  }
+
   .interactive-card-media {
     transform: scale(1);
     transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);

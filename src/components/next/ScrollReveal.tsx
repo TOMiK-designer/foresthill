@@ -32,7 +32,7 @@ export function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const isSoftRevealPage = pathname === "/sosnowka";
+    const isSoftRevealPage = pathname === "/sosnowka" || pathname === "/mrzezyno";
     document.body.dataset.scrollRevealTone = isSoftRevealPage ? "soft" : "default";
 
     const elements = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR)).filter(
