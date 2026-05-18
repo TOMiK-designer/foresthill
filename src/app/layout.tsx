@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles.css";
 import { CookieBanner } from "@/components/next/CookieBanner";
+import { NoWidows } from "@/components/next/NoWidows";
 import { PageTransitions } from "@/components/next/PageTransitions";
 import { ScrollToTopButton } from "@/components/next/ScrollToTopButton";
 import { ScrollReveal } from "@/components/next/ScrollReveal";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="page-content flex-1 bg-background">{children}</main>
           <SiteFooter />
           <CookieBanner />
+          <NoWidows />
           <ScrollReveal />
           <ScrollToTopButton />
         </div>
