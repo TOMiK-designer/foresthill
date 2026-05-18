@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const locations = [
@@ -39,7 +39,8 @@ export default function HomePage() {
           alt="Karkonoski las o poranku"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/35 to-black/55" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent via-background/55 to-background" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <h1 className="font-serif max-w-4xl text-4xl leading-[1.05] md:text-6xl lg:text-7xl">
             Twój drugi dom na szlaku karkonoskich
@@ -56,9 +57,16 @@ export default function HomePage() {
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
+        <a
+          href="#wprowadzenie"
+          aria-label="Przewiń w dół"
+          className="glass-button absolute bottom-8 left-1/2 z-20 inline-flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full text-primary shadow-lg transition-transform hover:-translate-x-1/2 hover:translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/80"
+        >
+          <ArrowDown className="h-5 w-5 animate-bounce" />
+        </a>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+      <section id="wprowadzenie" className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
         <p className="mb-6 text-sm uppercase tracking-[0.25em] text-accent">Witamy</p>
         <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
           Wasza obecność w apartamentach Forest Hill to wyraz ogromnego zaufania
