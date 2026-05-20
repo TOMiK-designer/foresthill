@@ -90,10 +90,10 @@ export default function HomePage() {
           </p>
           <a
             href="#apartamenty"
-            className="glass-button mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-medium text-primary"
+            aria-label="Przewiń do apartamentów"
+            className="glass-button mx-auto mt-5 inline-flex h-12 w-12 items-center justify-center rounded-full text-primary shadow-lg transition-transform hover:translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           >
-            Poznaj nasze apartamenty
-            <ArrowRight className="h-4 w-4" />
+            <ArrowDown className="h-5 w-5 animate-bounce" />
           </a>
         </div>
       </section>
