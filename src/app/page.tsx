@@ -83,6 +83,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-secondary/45 px-6 py-16 text-center text-primary md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <p className="font-serif text-3xl leading-tight md:text-5xl">
+            Morze czy góry? Zapraszamy i tu i tu - nie musisz wybierać!
+          </p>
+        </div>
+      </section>
+
       <section id="apartamenty" className="bg-secondary/40 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto mb-16 max-w-2xl text-center">
