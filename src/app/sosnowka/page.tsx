@@ -188,7 +188,7 @@ export default function SosnowkaPage() {
           <div className="flex flex-col items-center gap-6">
             <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-16 w-auto rounded-md bg-white p-2" />
             <a
-              href="https://client6351.idobooking.com/book-now/index.php?currency=1=1&language=1=1&language=1&location=2855&from_own_button=1"
+              href="https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
