@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  { icon: Volume, label: "Cisze i prywatność" },
+  { icon: Volume, label: "Ciszę i prywatność" },
   { icon: TreePine, label: "Poranny śpiew ptaków" },
   { icon: Sparkles, label: "Przestrzeń, w której naprawdę można odpocząć" },
   { icon: Wind, label: "Brak hałasu ulicy" },
