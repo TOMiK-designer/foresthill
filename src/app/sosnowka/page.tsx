@@ -108,7 +108,7 @@ export default function SosnowkaPage() {
             Szklarskiej Poręby, Cieplic, Jeleniej Góry oraz całych Karkonoszy.
           </p>
           <p>
-            Możesz chodzić po górach, robić codzienne wycieczki, a jeśli zechcesz, spędzić dzień na
+            Możesz chodzić po górach, robić codzienne wycieczki, a jeśli zechcesz - spędzić dzień na
             leżaku lub na basenie i podziwiać góry z tej perspektywy.
           </p>
         </div>
