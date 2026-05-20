@@ -88,6 +88,13 @@ export default function HomePage() {
           <p className="font-serif text-3xl leading-tight md:text-5xl">
             Morze czy góry? Zapraszamy i tu i tu - nie musisz wybierać!
           </p>
+          <a
+            href="#apartamenty"
+            className="glass-button mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-medium text-primary"
+          >
+            Poznaj nasze apartamenty
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
