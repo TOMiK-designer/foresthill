@@ -8,6 +8,7 @@ import { createPortal } from "react-dom";
 type GalleryImage = {
   src: string;
   alt: string;
+  featured?: boolean;
 };
 
 type ImageLightboxGalleryProps = {
@@ -179,28 +180,32 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
   return (
     <>
       <div className="grid auto-rows-[10.5rem] grid-flow-dense gap-3 sm:auto-rows-[12rem] md:grid-cols-3 md:auto-rows-[13.5rem] md:gap-4">
-        {images.map((image, index) => (
-          <button
-            key={image.src}
-            type="button"
-            aria-label={`Powiększ zdjęcie: ${image.alt}`}
-            onClick={() => setActiveIndex(index)}
-            className={`interactive-card group relative h-full w-full overflow-hidden rounded-xl bg-muted text-left shadow-sm outline-none ring-primary/40 focus-visible:ring-2 md:rounded-2xl ${
-              index % 10 === 0 || index % 10 === 6 ? "md:col-span-2 md:row-span-2" : ""
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes={index % 10 === 0 || index % 10 === 6 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
-              className="interactive-card-media object-cover"
-            />
-            <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-              <Expand className="h-4 w-4" />
-            </span>
-          </button>
-        ))}
+        {images.map((image, index) => {
+          const isFeatured = image.featured ?? (index % 10 === 0 || index % 10 === 6);
+
+          return (
+            <button
+              key={image.src}
+              type="button"
+              aria-label={`Powiększ zdjęcie: ${image.alt}`}
+              onClick={() => setActiveIndex(index)}
+              className={`interactive-card group relative h-full w-full overflow-hidden rounded-xl bg-muted text-left shadow-sm outline-none ring-primary/40 focus-visible:ring-2 md:rounded-2xl ${
+                isFeatured ? "md:col-span-2 md:row-span-2" : ""
+              }`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes={isFeatured ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+                className="interactive-card-media object-cover"
+              />
+              <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <Expand className="h-4 w-4" />
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {lightbox ? createPortal(lightbox, document.body) : null}
