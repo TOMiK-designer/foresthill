@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Star } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -41,9 +41,6 @@ export function SiteFooter() {
               label="Instagram"
             >
               <Instagram className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink href="https://www.google.com/search?q=Forest+Hill+Apartamenty" label="Opinie Google">
-              <Star className="h-5 w-5" />
             </SocialLink>
           </div>
         </div>
