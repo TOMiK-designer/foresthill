@@ -104,6 +104,31 @@ export default function HomePage() {
 
       <section id="apartamenty" className="bg-secondary/40 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto mb-14 max-w-4xl rounded-2xl bg-card/80 p-6 text-center shadow-sm md:p-8">
+            <h3 className="font-serif text-2xl text-primary md:text-3xl">
+              Poznaj nasze apartamenty i rezerwuj pobyt
+            </h3>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70">
+              Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u operatora.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a
+                href={SOSNOWKA_RESERVATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button rounded-full px-6 py-3 text-sm font-medium text-primary"
+              >
+                Rezerwuj Sosnówkę
+              </a>
+              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
+                Świeradów-Zdrój wkrótce
+              </span>
+              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
+                Mrzeżyno wkrótce
+              </span>
+            </div>
+          </div>
+
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Nasze lokalizacje</p>
             <h2 className="font-serif text-3xl text-primary md:text-5xl">
@@ -164,30 +189,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-12 max-w-4xl rounded-2xl bg-card/80 p-6 text-center shadow-sm md:p-8">
-            <h3 className="font-serif text-2xl text-primary md:text-3xl">
-              Poznaj nasze apartamenty i rezerwuj pobyt
-            </h3>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70">
-              Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u operatora.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a
-                href={SOSNOWKA_RESERVATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-button rounded-full px-6 py-3 text-sm font-medium text-primary"
-              >
-                Rezerwuj Sosnówkę
-              </a>
-              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
-                Świeradów-Zdrój wkrótce
-              </span>
-              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
-                Mrzeżyno wkrótce
-              </span>
-            </div>
-          </div>
         </div>
       </section>
     </>
