@@ -1,13 +1,12 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const SOSNOWKA_RESERVATION_URL =
-  "https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1";
+const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
 
 const locations = [
   {
     href: "/sosnowka",
-    reservationHref: SOSNOWKA_RESERVATION_URL,
+    reservationHref: SOSNOWKA_RESERVATION_SECTION,
     name: "Sosnówka",
     region: "Karkonosze",
     image: "/assets/hero-sosnowka.jpg",
@@ -112,14 +111,12 @@ export default function HomePage() {
               Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u operatora.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a
-                href={SOSNOWKA_RESERVATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={SOSNOWKA_RESERVATION_SECTION}
                 className="glass-button rounded-full px-6 py-3 text-sm font-medium text-primary"
               >
-                Rezerwuj Sosnówkę
-              </a>
+                Rezerwuj pobyt w Sosnówce
+              </Link>
               <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
                 Świeradów-Zdrój wkrótce
               </span>
@@ -167,14 +164,12 @@ export default function HomePage() {
                   <p className="text-sm leading-relaxed text-foreground/75">{loc.description}</p>
                   <div className="mt-auto flex flex-wrap items-end justify-end gap-3 pt-6">
                     {loc.reservationHref ? (
-                      <a
+                      <Link
                         href={loc.reservationHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="glass-button rounded-full px-5 py-2.5 text-sm font-medium text-primary"
                       >
                         Rezerwuj pobyt
-                      </a>
+                      </Link>
                     ) : null}
                     <Link
                       href={loc.href}

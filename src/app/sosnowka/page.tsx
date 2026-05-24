@@ -181,7 +181,7 @@ export default function SosnowkaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+      <section id="rezerwacje" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-20 md:py-28">
         <div className="rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-14">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
           <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
