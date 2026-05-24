@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "Klimatyzowany apartament w kompleksie Lake Hill nad Zalewem Sosnówka. 38 m², 2 pokoje, do 4 osób. Cisza, las i bliskość Karpacza.",
 };
 
+const BOOKING_URL =
+  "https://www.booking.com/hotel/pl/apartament-forest-hill-sosnowka-d114-5d-apartments.pl.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaLYBiAEBmAEzuAEHyAEN2AED6AEB-AEBiAIBqAIBuAKo4srQBsACAdICJDMzOWFjOWY5LWM0ZjAtNDVkOC1iNjg5LTYxMDA1YmRmOTBlYtgCAeACAQ&sid=cf9b14638fdf3d22e12a58210cb11761&all_sr_blocks=1627752001_433410955_2_0_0&checkin=2026-05-29&checkout=2026-05-31&dest_id=16277520&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1627752001_433410955_2_0_0&hpos=1&matching_block_id=1627752001_433410955_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1627752001_433410955_2_0_0__83100&srepoch=1779609924&srpvid=9c4f38e0528d05b1&type=total&ucfs=1&";
+
 const benefits = [
   { icon: Volume, label: "Ciszę i prywatność" },
   { icon: TreePine, label: "Poranny śpiew ptaków" },
@@ -185,17 +188,40 @@ export default function SosnowkaPage() {
           <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
           <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
           <p className="mx-auto mb-8 max-w-xl opacity-85">Rezerwacja prowadzona jest przez naszego operatora, 5D Apartamenty.</p>
-          <div className="flex flex-col items-center gap-6">
-            <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-16 w-auto rounded-md bg-white p-2" />
-            <a
-              href="https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
-            >
-              Przejdź do rezerwacji
-              <ArrowRight className="h-4 w-4" />
-            </a>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-16 w-auto rounded-md bg-white p-2" />
+              <a
+                href="https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+              >
+                Przejdź do rezerwacji
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Zarezerwuj apartament Forest Hill Sosnówka na Booking.com"
+                className="inline-flex h-16 items-center rounded-md bg-[#003b95] px-5 text-2xl font-bold text-white shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-[#0057b8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              >
+                Booking.com
+              </a>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+              >
+                Rezerwuj na Booking.com
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
