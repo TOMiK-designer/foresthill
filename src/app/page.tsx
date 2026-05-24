@@ -1,9 +1,13 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+const SOSNOWKA_RESERVATION_URL =
+  "https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1";
+
 const locations = [
   {
     href: "/sosnowka",
+    reservationHref: SOSNOWKA_RESERVATION_URL,
     name: "Sosnówka",
     region: "Karkonosze",
     image: "/assets/hero-sosnowka.jpg",
@@ -113,9 +117,8 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {locations.map((loc) => (
-              <Link
+              <article
                 key={loc.href}
-                href={loc.href}
                 className="interactive-card group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
@@ -137,13 +140,53 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-sm leading-relaxed text-foreground/75">{loc.description}</p>
-                  <span className="ml-auto mt-auto inline-flex items-center gap-2 pt-5 text-right text-sm font-medium text-primary">
-                    Zobacz apartament
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  <div className="mt-auto flex flex-wrap items-end justify-end gap-3 pt-6">
+                    {loc.reservationHref ? (
+                      <a
+                        href={loc.reservationHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glass-button rounded-full px-5 py-2.5 text-sm font-medium text-primary"
+                      >
+                        Rezerwuj pobyt
+                      </a>
+                    ) : null}
+                    <Link
+                      href={loc.href}
+                      className="inline-flex items-center gap-2 rounded-full px-1 py-2.5 text-right text-sm font-medium text-primary"
+                    >
+                      Zobacz apartament
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+              </article>
             ))}
+          </div>
+
+          <div className="mx-auto mt-12 max-w-4xl rounded-2xl bg-card/80 p-6 text-center shadow-sm md:p-8">
+            <h3 className="font-serif text-2xl text-primary md:text-3xl">
+              Poznaj nasze apartamenty i rezerwuj pobyt
+            </h3>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70">
+              Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u operatora.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a
+                href={SOSNOWKA_RESERVATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button rounded-full px-6 py-3 text-sm font-medium text-primary"
+              >
+                Rezerwuj Sosnówkę
+              </a>
+              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
+                Świeradów-Zdrój wkrótce
+              </span>
+              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
+                Mrzeżyno wkrótce
+              </span>
+            </div>
           </div>
         </div>
       </section>
