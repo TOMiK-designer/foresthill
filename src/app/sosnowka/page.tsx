@@ -208,9 +208,9 @@ export default function SosnowkaPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Zarezerwuj apartament Forest Hill Sosnówka na Booking.com"
-                className="inline-flex h-16 items-center rounded-md bg-[#003b95] px-5 text-2xl font-bold text-white shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-[#0057b8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="inline-flex h-16 items-center rounded-md bg-white px-5 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
-                Booking.com
+                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-8 w-auto" />
               </a>
               <a
                 href={BOOKING_URL}
