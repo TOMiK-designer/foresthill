@@ -9,23 +9,48 @@ export default function CookiesPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-20 md:py-28">
       <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Dokumenty</p>
-      <h1 className="font-serif mb-10 text-4xl leading-tight text-primary md:text-5xl">Polityka cookies</h1>
+      <h1 className="mb-10 font-serif text-4xl leading-tight text-primary md:text-5xl">Polityka cookies</h1>
       <div className="space-y-6 leading-relaxed text-foreground/80">
         <p>
-          Strona Forest Hill Apartamenty korzysta z plików cookies, czyli niewielkich plików
-          tekstowych zapisywanych na urządzeniu końcowym Użytkownika w celu zapewnienia prawidłowego
-          działania witryny oraz poprawy jakości świadczonych usług.
+          Strona Forest Hill Apartamenty korzysta z plików cookies oraz podobnych technologii w celu
+          zapewnienia prawidłowego działania witryny. Opcjonalne pliki cookies są wykorzystywane
+          wyłącznie po wyrażeniu zgody przez Użytkownika.
         </p>
-        <h2 className="font-serif pt-6 text-2xl text-primary">1. Czym są pliki cookies</h2>
-        <p>Cookies to dane informatyczne przechowywane w urządzeniu Użytkownika, przeznaczone do korzystania ze strony internetowej.</p>
-        <h2 className="font-serif pt-6 text-2xl text-primary">2. Rodzaje wykorzystywanych cookies</h2>
+
+        <h2 className="pt-6 font-serif text-2xl text-primary">1. Czym są pliki cookies</h2>
+        <p>
+          Cookies to niewielkie pliki tekstowe zapisywane na urządzeniu końcowym Użytkownika podczas
+          korzystania ze strony internetowej. Mogą być niezbędne technicznie albo służyć dodatkowym
+          celom, takim jak analiza ruchu lub działania marketingowe.
+        </p>
+
+        <h2 className="pt-6 font-serif text-2xl text-primary">2. Kategorie zgód</h2>
         <ul className="list-disc space-y-2 pl-6">
-          <li>Niezbędne, zapewniające prawidłowe działanie strony.</li>
-          <li>Wydajnościowe, zbierające anonimowe informacje o sposobie korzystania ze strony.</li>
-          <li>Funkcjonalne, umożliwiające zapamiętanie wybranych ustawień.</li>
+          <li>
+            <strong>Niezbędne</strong> - wymagane do prawidłowego działania strony i zapamiętania
+            wyboru zgód. Te pliki nie wymagają dodatkowej zgody.
+          </li>
+          <li>
+            <strong>Analityczne</strong> - pomagają mierzyć sposób korzystania ze strony. Są
+            uruchamiane wyłącznie po dobrowolnej zgodzie.
+          </li>
+          <li>
+            <strong>Marketingowe</strong> - mogą służyć do personalizacji treści reklamowych. Są
+            uruchamiane wyłącznie po dobrowolnej zgodzie.
+          </li>
         </ul>
-        <h2 className="font-serif pt-6 text-2xl text-primary">3. Zarządzanie cookies</h2>
-        <p>Użytkownik może w każdej chwili zmienić ustawienia dotyczące plików cookies w swojej przeglądarce internetowej.</p>
+
+        <h2 className="pt-6 font-serif text-2xl text-primary">3. Zarządzanie zgodą</h2>
+        <p>
+          Przy pierwszej wizycie Użytkownik może zaakceptować wszystkie opcjonalne cookies, odrzucić
+          opcjonalne cookies albo samodzielnie wybrać kategorie zgód. Zgoda nie jest zaznaczona
+          domyślnie dla kategorii opcjonalnych.
+        </p>
+        <p>
+          Użytkownik może w każdej chwili zmienić lub wycofać zgodę, klikając przycisk „Cookies”
+          widoczny w dolnej części strony po zapisaniu pierwszego wyboru. Możliwe jest również
+          usunięcie plików cookies i danych strony w ustawieniach przeglądarki.
+        </p>
       </div>
     </article>
   );
