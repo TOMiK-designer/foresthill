@@ -6,7 +6,6 @@ const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
 const locations = [
   {
     href: "/sosnowka",
-    reservationHref: SOSNOWKA_RESERVATION_SECTION,
     name: "Sosnówka",
     region: "Karkonosze",
     image: "/assets/hero-sosnowka.jpg",
@@ -163,14 +162,6 @@ export default function HomePage() {
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-sm leading-relaxed text-foreground/75">{loc.description}</p>
                   <div className="mt-auto flex flex-wrap items-end justify-end gap-3 pt-6">
-                    {loc.reservationHref ? (
-                      <Link
-                        href={loc.reservationHref}
-                        className="glass-button rounded-full px-5 py-2.5 text-sm font-medium text-primary"
-                      >
-                        Rezerwuj pobyt
-                      </Link>
-                    ) : null}
                     <Link
                       href={loc.href}
                       className="inline-flex items-center gap-2 rounded-full px-1 py-2.5 text-right text-sm font-medium text-primary"
