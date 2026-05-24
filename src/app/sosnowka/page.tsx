@@ -57,15 +57,15 @@ const amenities = [
 
 const galleryImages = [
   {
-    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-wide.webp",
-    alt: "Fotel wypoczynkowy z kwiatkiem przy balkonie",
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-przygotowana.jpeg",
+    alt: "Sypialnia z przygotowanym łóżkiem i ręcznikami",
     featured: true,
   },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-balkon.webp", alt: "Salon z wyjściem na balkon" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-jadalnia-nowy.jpeg", alt: "Salon z kanapą, stołem i zegarem" },
   { src: "/assets/sosnowka/gallery/sosnowka-balkon-las.webp", alt: "Balkon apartamentu z widokiem na las" },
-  { src: "/assets/sosnowka/gallery/sosnowka-kawa-detal.webp", alt: "Ekspres do kawy w apartamencie" },
-  { src: "/assets/sosnowka/gallery/sosnowka-strefa-tv.webp", alt: "Strefa telewizyjna i kącik kawowy" },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-kuchnia.webp", alt: "Część dzienna z jadalnią i sofą" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-kanapa.jpeg", alt: "Kanapa i kącik wypoczynkowy w salonie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-salon-perspektywa.jpeg", alt: "Salon z sofą i widokiem na aneks kuchenny" },
+  { src: "/assets/sosnowka/gallery/sosnowka-kubki-polka.jpeg", alt: "Półka z kubkami w aneksie kuchennym" },
   {
     src: "/assets/sosnowka/gallery/sosnowka-resort-zalew.webp",
     alt: "Nakryty stół z kwiatkiem i zegarem w apartamencie",
@@ -76,12 +76,10 @@ const galleryImages = [
   { src: "/assets/sosnowka/gallery/sosnowka-widok-zalew.webp", alt: "Panorama Zalewu Sosnówka i okolicznych wzgórz" },
   { src: "/assets/sosnowka/gallery/sosnowka-stol-zegar.webp", alt: "Widok na kompleks apartamentowy nad Zalewem Sosnówka" },
   { src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp", alt: "Dekoracja Forest Hill na drzwiach apartamentu" },
-  { src: "/assets/sosnowka/gallery/sosnowka-polki-kubki.webp", alt: "Kącik kawowy z detalami Forest Hill" },
-  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-okno.webp", alt: "Sypialnia z dużym łóżkiem i oknem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-umywalka.webp", alt: "Łazienka z umywalką i lustrem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz.webp", alt: "Łazienka z dekoracyjnym obrazem" },
+  { src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny.jpg", alt: "Aneks kuchenny z płytą indukcyjną i mikrofalówką" },
+  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-reczniki.jpeg", alt: "Sypialnia z łóżkiem i przygotowanymi ręcznikami" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic.jpg", alt: "Łazienka z prysznicem, umywalką i lustrem" },
   { src: "/assets/sosnowka/gallery/sosnowka-fotel-balkon.webp", alt: "Fotel wypoczynkowy przy balkonie" },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-stol.webp", alt: "Część dzienna z okrągłym stołem" },
 ];
 
 export default function SosnowkaPage() {
