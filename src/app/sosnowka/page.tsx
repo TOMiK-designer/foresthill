@@ -190,7 +190,7 @@ export default function SosnowkaPage() {
           <p className="mx-auto mb-8 max-w-xl opacity-85">Rezerwacja prowadzona jest przez naszego operatora, 5D Apartamenty.</p>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-16 w-auto rounded-md bg-white p-2" />
+              <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-20 w-auto rounded-md bg-white p-2" />
               <a
                 href="https://client6351.idobooking.com/book-now/index.php?currency=1&language=1&location=285&from_own_button=1"
                 target="_blank"
@@ -208,9 +208,9 @@ export default function SosnowkaPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Zarezerwuj apartament Forest Hill Sosnówka na Booking.com"
-                className="inline-flex h-16 items-center rounded-md bg-white px-5 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="inline-flex h-20 items-center rounded-md bg-white px-6 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
-                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-8 w-auto" />
+                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-10 w-auto" />
               </a>
               <a
                 href={BOOKING_URL}
