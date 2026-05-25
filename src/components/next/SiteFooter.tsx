@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -41,6 +41,9 @@ export function SiteFooter() {
               label="Instagram"
             >
               <Instagram className="h-5 w-5" />
+            </SocialLink>
+            <SocialLink href="https://youtube.com/@foresthillapartamenty?si=w6bBFVbMfbTisF8-" label="YouTube">
+              <Youtube className="h-5 w-5" />
             </SocialLink>
           </div>
         </div>
