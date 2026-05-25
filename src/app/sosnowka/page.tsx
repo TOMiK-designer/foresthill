@@ -7,6 +7,7 @@ import {
   Car,
   Coffee,
   MapPin,
+  PawPrint,
   Sparkles,
   TreePine,
   Tv,
@@ -30,6 +31,7 @@ const benefits = [
   { icon: Sparkles, label: "Przestrzeń, w której naprawdę można odpocząć" },
   { icon: Wind, label: "Brak hałasu ulicy" },
   { icon: TreePine, label: "Kojący widok na zielony las" },
+  { icon: PawPrint, label: "Pobyt z pupilem mile widziany" },
   { icon: Wind, label: "Przyjemny chłód latem, bez ciągłego szumu klimatyzacji" },
 ];
 
@@ -49,6 +51,7 @@ const amenities = [
   { icon: Tv, text: "2x Smart TV, platformy streamingowe" },
   { icon: Wifi, text: "Bezpłatne WiFi" },
   { icon: Wind, text: "Klimatyzacja centralna" },
+  { icon: PawPrint, text: "Akceptujemy psy" },
   { icon: Sparkles, text: "Odkurzacz, żelazko, deska, suszarka" },
   { icon: TreePine, text: "Przestronny balkon z meblami ogrodowymi" },
   { icon: Car, text: "Miejsce parkingowe zewnętrzne w cenie" },
