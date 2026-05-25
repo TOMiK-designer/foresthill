@@ -1,7 +1,8 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
+const GUIDES_YOUTUBE_URL = "https://youtube.com/shorts/YBj2H0gt3-U?is=vi2_CW7Tn5bHvEas";
 
 const locations = [
   {
@@ -82,6 +83,36 @@ export default function HomePage() {
             komplementem dla nas będzie poczucie, że czas spędzony u nas przyniósł Wam upragniony
             odpoczynek.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-background px-6 pb-20 md:pb-28">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 rounded-2xl bg-card p-5 shadow-sm md:grid-cols-[0.95fr_1.05fr] md:p-8">
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src="/assets/kropka-cookie-przewodniczki.jpeg"
+              alt="Kropka i Coockie na kanapie"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="px-1 py-2 text-center md:px-4 md:text-left">
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Nasi mali gospodarze</p>
+            <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
+              Kropka i Coockie
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-foreground/75">
+              Twoje przewodniczki po naszych apartamentach.
+            </p>
+            <a
+              href={GUIDES_YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-button mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary"
+            >
+              <Youtube className="h-5 w-5" />
+              Obejrzyj i subskrybuj
+            </a>
+          </div>
         </div>
       </section>
 
