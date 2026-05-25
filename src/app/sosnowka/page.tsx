@@ -89,7 +89,7 @@ export default function SosnowkaPage() {
   return (
     <>
       <section className="relative h-[75vh] min-h-[520px] overflow-hidden">
-        <img src="/assets/hero-sosnowka.jpg" alt="Widok na Karkonosze i Zalew Sosnówka" className="absolute inset-0 h-full w-full object-cover" />
+        <img src="/assets/hero-sosnowka-page.jpg" alt="Widok na Karkonosze i Zalew Sosnówka" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] opacity-90">Karkonosze</p>
