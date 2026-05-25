@@ -82,7 +82,7 @@ const galleryImages = [
   { src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny.jpg", alt: "Aneks kuchenny z płytą indukcyjną i mikrofalówką" },
   { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-reczniki.jpeg", alt: "Sypialnia z łóżkiem i przygotowanymi ręcznikami" },
   { src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic.jpg", alt: "Łazienka z prysznicem, umywalką i lustrem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-fotel-balkon.webp", alt: "Fotel wypoczynkowy przy balkonie" },
+  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz-lustro.jpeg", alt: "Łazienka z lustrem, umywalką i dekoracyjnym obrazem" },
 ];
 
 export default function SosnowkaPage() {
