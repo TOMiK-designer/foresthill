@@ -1,6 +1,8 @@
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
+const TIKTOK_URL = "https://www.tiktok.com/@forest.hill.apart?_r=1&_t=ZN-96jzu4kbSSc";
+
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground" data-no-scroll-reveal>
@@ -44,6 +46,9 @@ export function SiteFooter() {
             </SocialLink>
             <SocialLink href="https://youtube.com/@foresthillapartamenty?si=w6bBFVbMfbTisF8-" label="YouTube">
               <Youtube className="h-5 w-5" />
+            </SocialLink>
+            <SocialLink href={TIKTOK_URL} label="TikTok">
+              <TikTokIcon className="h-5 w-5" />
             </SocialLink>
           </div>
         </div>
@@ -111,5 +116,18 @@ function FooterTextLink({ href, children }: { href: string; children: React.Reac
     <Link href={href} className="underline-offset-4 transition-opacity hover:opacity-100 hover:underline">
       {children}
     </Link>
+  );
+}
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M17.2 5.2a5.1 5.1 0 0 0 3.2 1.2v3.4a8.3 8.3 0 0 1-3.7-.9v5.9a5.8 5.8 0 1 1-5.8-5.8c.4 0 .8 0 1.2.1v3.5a2.4 2.4 0 1 0 1.2 2.1V2.8h3.4c.1 1 .3 1.8.5 2.4Z" />
+    </svg>
   );
 }

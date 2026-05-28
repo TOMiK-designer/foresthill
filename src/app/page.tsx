@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
 const GUIDES_YOUTUBE_URL = "https://youtube.com/shorts/YBj2H0gt3-U?is=vi2_CW7Tn5bHvEas";
+const GUIDES_TIKTOK_URL = "https://www.tiktok.com/@forest.hill.apart?_r=1&_t=ZN-96jzu4kbSSc";
 
 const locations = [
   {
@@ -103,15 +104,26 @@ export default function HomePage() {
             <p className="mt-4 text-lg leading-relaxed text-foreground/75">
               Twoje przewodniczki po naszych apartamentach.
             </p>
-            <a
-              href={GUIDES_YOUTUBE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-button mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary"
-            >
-              <Youtube className="h-5 w-5" />
-              Obejrzyj i subskrybuj
-            </a>
+            <div className="mt-7 flex flex-wrap justify-center gap-3 md:justify-start">
+              <a
+                href={GUIDES_YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary"
+              >
+                <Youtube className="h-5 w-5" />
+                Obejrzyj i subskrybuj
+              </a>
+              <a
+                href={GUIDES_TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-primary"
+              >
+                <TikTokIcon className="h-5 w-5" />
+                Obserwuj na TikToku
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -209,5 +221,18 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M17.2 5.2a5.1 5.1 0 0 0 3.2 1.2v3.4a8.3 8.3 0 0 1-3.7-.9v5.9a5.8 5.8 0 1 1-5.8-5.8c.4 0 .8 0 1.2.1v3.5a2.4 2.4 0 1 0 1.2 2.1V2.8h3.4c.1 1 .3 1.8.5 2.4Z" />
+    </svg>
   );
 }
