@@ -9,6 +9,7 @@ import {
   MapPin,
   PawPrint,
   Sparkles,
+  Star,
   TreePine,
   Tv,
   Volume,
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
 
 const BOOKING_URL =
   "https://www.booking.com/hotel/pl/apartament-forest-hill-sosnowka-d114-5d-apartments.pl.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaLYBiAEBmAEzuAEHyAEN2AED6AEB-AEBiAIBqAIBuAKo4srQBsACAdICJDMzOWFjOWY5LWM0ZjAtNDVkOC1iNjg5LTYxMDA1YmRmOTBlYtgCAeACAQ&sid=cf9b14638fdf3d22e12a58210cb11761&all_sr_blocks=1627752001_433410955_2_0_0&checkin=2026-05-29&checkout=2026-05-31&dest_id=16277520&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1627752001_433410955_2_0_0&hpos=1&matching_block_id=1627752001_433410955_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1627752001_433410955_2_0_0__83100&srepoch=1779609924&srpvid=9c4f38e0528d05b1&type=total&ucfs=1&";
+
+const GOOGLE_REVIEW_URL = "https://share.google/bTWzGiwSGJcQv9Bhk";
 
 const benefits = [
   { icon: Volume, label: "Ciszę i prywatność" },
@@ -220,6 +223,43 @@ export default function SosnowkaPage() {
                 className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
               >
                 Rezerwuj na Booking.com
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
+        <div className="interactive-card overflow-hidden rounded-3xl border border-primary/10 bg-card shadow-sm">
+          <div className="grid items-center gap-8 p-8 md:grid-cols-[1.15fr_0.85fr] md:p-12">
+            <div>
+              <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Po pobycie</p>
+              <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
+                Podziel się opinią o Forest Hill Sosnówka
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-foreground/80">
+                Jeśli dobrze odpocząłeś w naszym apartamencie, będzie nam bardzo miło, gdy zostawisz
+                kilka słów w Google. Twoja opinia pomaga kolejnym gościom wybrać miejsce na spokojny
+                pobyt w Karkonoszach.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-secondary/55 p-6 text-center">
+              <div className="mx-auto mb-5 flex w-max gap-1 text-primary" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} className="h-5 w-5 fill-current" />
+                ))}
+              </div>
+              <p className="mb-6 text-sm leading-relaxed text-foreground/75">
+                Dziękujemy za każdą opinię i każde dobre słowo po pobycie.
+              </p>
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 font-medium text-primary"
+              >
+                Zostaw opinię w Google
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
