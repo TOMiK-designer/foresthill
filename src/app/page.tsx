@@ -89,7 +89,7 @@ export default function HomePage() {
 
       <section className="bg-background px-6 pb-20 md:pb-28">
         <div className="mx-auto grid max-w-5xl items-center gap-8 rounded-2xl bg-card p-5 shadow-sm md:grid-cols-[0.95fr_1.05fr] md:p-8">
-          <div className="overflow-hidden rounded-xl">
+          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-xl md:max-w-[330px]">
             <img
               src="/assets/kropka-cookie-przewodniczki.jpeg"
               alt="Kropka i Coockie na kanapie"
