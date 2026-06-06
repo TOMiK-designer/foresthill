@@ -2,6 +2,7 @@ import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const TIKTOK_URL = "https://www.tiktok.com/@forest.hill.apart?_r=1&_t=ZN-96jzu4kbSSc";
+const GOOGLE_REVIEW_URL = "https://share.google/bTWzGiwSGJcQv9Bhk";
 
 export function SiteFooter() {
   return (
@@ -31,6 +32,14 @@ export function SiteFooter() {
             Prosimy o zostawienie opinii po zakończeniu pobytu. To dla nas najpiękniejszy
             komplement.
           </p>
+          <a
+            href={GOOGLE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-button glass-button-dark mt-5 inline-flex rounded-full px-5 py-3 text-sm font-medium"
+          >
+            Zostaw opinię w Google
+          </a>
         </div>
         <div>
           <FooterColumnTitle>Śledź nas</FooterColumnTitle>
