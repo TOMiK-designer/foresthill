@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles.css";
 import { CookieBanner } from "@/components/next/CookieBanner";
+import { GoogleAnalytics } from "@/components/next/GoogleAnalytics";
 import { NoWidows } from "@/components/next/NoWidows";
 import { PageTransitions } from "@/components/next/PageTransitions";
 import { ScrollToTopButton } from "@/components/next/ScrollToTopButton";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <NoWidows />
           <ScrollReveal />
           <ScrollToTopButton />
+          <GoogleAnalytics />
         </div>
       </body>
     </html>
