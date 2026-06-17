@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles.css";
+import { Analytics } from "@vercel/analytics/next";
 import { CookieBanner } from "@/components/next/CookieBanner";
 import { GoogleAnalytics } from "@/components/next/GoogleAnalytics";
 import { NoWidows } from "@/components/next/NoWidows";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollToTopButton />
           <GoogleAnalytics />
         </div>
+        <Analytics />
       </body>
     </html>
   );
