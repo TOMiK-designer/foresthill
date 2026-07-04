@@ -25,6 +25,12 @@ export function SiteFooter() {
             {" · "}
             <FooterTextLink href="/mrzezyno">Mrzeżyno</FooterTextLink>.
           </p>
+          <Link
+            href="/kontakt"
+            className="mt-5 inline-flex text-sm font-medium underline-offset-4 hover:underline"
+          >
+            Kontakt
+          </Link>
         </div>
         <div>
           <FooterColumnTitle>Zostaw opinię</FooterColumnTitle>
@@ -73,6 +79,9 @@ export function SiteFooter() {
             </Link>
             <Link href="/polityka-cookies" className="underline-offset-4 hover:underline">
               Polityka cookies
+            </Link>
+            <Link href="/kontakt" className="underline-offset-4 hover:underline">
+              Kontakt
             </Link>
             <a
               href="https://tomreklamy.pl"

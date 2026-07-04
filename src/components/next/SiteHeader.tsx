@@ -9,6 +9,7 @@ const nav = [
   { href: "/sosnowka", label: "Sosnówka" },
   { href: "/swieradow", label: "Świeradów-Zdrój" },
   { href: "/mrzezyno", label: "Mrzeżyno" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 const logosByPath: Record<string, string> = {

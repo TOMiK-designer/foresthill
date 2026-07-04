@@ -7,6 +7,7 @@ const routes = [
   "/sosnowka",
   "/swieradow",
   "/mrzezyno",
+  "/kontakt",
   "/polityka-prywatnosci",
   "/polityka-cookies",
 ];
