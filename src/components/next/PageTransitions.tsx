@@ -31,7 +31,13 @@ export function PageTransitions() {
 
       const href = anchor.getAttribute("href");
       const target = anchor.getAttribute("target");
-      if (!href || target || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      if (
+        !href ||
+        target ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:")
+      ) {
         return;
       }
 

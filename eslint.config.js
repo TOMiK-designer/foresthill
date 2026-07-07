@@ -1,40 +1,26 @@
-import js from "@eslint/js";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
 
-export default tseslint.config(
-  { ignores: ["dist", ".output", ".vinxi"] },
+const eslintConfig = [
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-    plugins: {
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-    },
+    ignores: [
+      ".next/**",
+      "node_modules/**",
+      // Plain Node launcher scripts — legitimately CommonJS, not part of the TS/React app.
+      "scripts/**/*.cjs",
+    ],
+  },
+  ...nextCoreWebVitals,
+  ...nextTypescript,
+  eslintPluginPrettier,
+  {
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      "no-restricted-imports": [
-        "error",
-        {
-          paths: [
-            {
-              name: "server-only",
-              message:
-                "TanStack Start does not use the Next.js `server-only` package. Rename the module to `*.server.ts` or mark it with `@tanstack/react-start/server-only`.",
-            },
-          ],
-        },
-      ],
-      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
-      "@typescript-eslint/no-unused-vars": "off",
+      // Legitimate client-only hydration reads (localStorage, matchMedia) on mount;
+      // rewriting to useSyncExternalStore is a larger behavioral change than a lint-tooling fix warrants.
+      "react-hooks/set-state-in-effect": "warn",
     },
   },
-  eslintPluginPrettier,
-);
+];
+
+export default eslintConfig;

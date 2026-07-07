@@ -35,8 +35,8 @@ export default function ContactPage() {
           Napisz w odpowiednie miejsce
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/75">
-          Sprawy rezerwacji, pobytu i obsługi gości prowadzone są przez operatorów przypisanych
-          do poszczególnych apartamentów. Kontakt do nich znajdziesz na podstronach lokalizacji.
+          Sprawy rezerwacji, pobytu i obsługi gości prowadzone są przez operatorów przypisanych do
+          poszczególnych apartamentów. Kontakt do nich znajdziesz na podstronach lokalizacji.
         </p>
       </section>
 
@@ -47,8 +47,8 @@ export default function ContactPage() {
           </div>
           <h2 className="font-serif text-3xl text-primary md:text-4xl">Rezerwacje i pobyt</h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-foreground/75">
-            W przypadku pytań o termin, płatność, zameldowanie, wyjazd lub szczegóły pobytu
-            wybierz konkretną lokalizację. Tam znajdziesz aktualne informacje i linki do operatora.
+            W przypadku pytań o termin, płatność, zameldowanie, wyjazd lub szczegóły pobytu wybierz
+            konkretną lokalizację. Tam znajdziesz aktualne informacje i linki do operatora.
           </p>
 
           <div className="mt-8 grid gap-3">

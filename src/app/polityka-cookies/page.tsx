@@ -9,7 +9,9 @@ export default function CookiesPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-20 md:py-28">
       <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Dokumenty</p>
-      <h1 className="mb-10 font-serif text-4xl leading-tight text-primary md:text-5xl">Polityka cookies</h1>
+      <h1 className="mb-10 font-serif text-4xl leading-tight text-primary md:text-5xl">
+        Polityka cookies
+      </h1>
       <div className="space-y-6 leading-relaxed text-foreground/80">
         <p>
           Strona Forest Hill Apartamenty korzysta z plików cookies oraz podobnych technologii w celu

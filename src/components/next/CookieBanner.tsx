@@ -130,13 +130,17 @@ export function CookieBanner() {
                   title="Analityczne"
                   description="Pomagają mierzyć sposób korzystania ze strony, wyłącznie po zgodzie."
                   checked={optionalConsent.analytics}
-                  onChange={(analytics) => setOptionalConsent((current) => ({ ...current, analytics }))}
+                  onChange={(analytics) =>
+                    setOptionalConsent((current) => ({ ...current, analytics }))
+                  }
                 />
                 <CookieOption
                   title="Marketingowe"
                   description="Służą do personalizacji treści reklamowych, wyłącznie po zgodzie."
                   checked={optionalConsent.marketing}
-                  onChange={(marketing) => setOptionalConsent((current) => ({ ...current, marketing }))}
+                  onChange={(marketing) =>
+                    setOptionalConsent((current) => ({ ...current, marketing }))
+                  }
                 />
               </div>
             ) : null}

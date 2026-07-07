@@ -69,32 +69,78 @@ const galleryImages = [
     alt: "Sypialnia z przygotowanym łóżkiem i ręcznikami",
     featured: true,
   },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-jadalnia-nowy.jpeg", alt: "Salon z kanapą, stołem i zegarem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-balkon-las.webp", alt: "Balkon apartamentu z widokiem na las" },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-kanapa.jpeg", alt: "Kanapa i kącik wypoczynkowy w salonie" },
-  { src: "/assets/sosnowka/gallery/sosnowka-salon-perspektywa.jpeg", alt: "Salon z sofą i widokiem na aneks kuchenny" },
-  { src: "/assets/sosnowka/gallery/sosnowka-kubki-polka.jpeg", alt: "Półka z kubkami w aneksie kuchennym" },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-salon-jadalnia-nowy.jpeg",
+    alt: "Salon z kanapą, stołem i zegarem",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-balkon-las.webp",
+    alt: "Balkon apartamentu z widokiem na las",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-salon-kanapa.jpeg",
+    alt: "Kanapa i kącik wypoczynkowy w salonie",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-salon-perspektywa.jpeg",
+    alt: "Salon z sofą i widokiem na aneks kuchenny",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-kubki-polka.jpeg",
+    alt: "Półka z kubkami w aneksie kuchennym",
+  },
   {
     src: "/assets/sosnowka/gallery/sosnowka-resort-zalew.webp",
     alt: "Nakryty stół z kwiatkiem i zegarem w apartamencie",
     featured: true,
   },
-  { src: "/assets/sosnowka/gallery/sosnowka-budynek-lake-hill.webp", alt: "Budynki Lake Hill w Sosnówce" },
-  { src: "/assets/sosnowka/gallery/sosnowka-widok-na-sniezke.webp", alt: "Widok na Śnieżkę z okolic Sosnówki" },
-  { src: "/assets/sosnowka/gallery/sosnowka-widok-zalew.webp", alt: "Panorama Zalewu Sosnówka i okolicznych wzgórz" },
-  { src: "/assets/sosnowka/gallery/sosnowka-stol-zegar.webp", alt: "Widok na kompleks apartamentowy nad Zalewem Sosnówka" },
-  { src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp", alt: "Dekoracja Forest Hill na drzwiach apartamentu" },
-  { src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny.jpg", alt: "Aneks kuchenny z płytą indukcyjną i mikrofalówką" },
-  { src: "/assets/sosnowka/gallery/sosnowka-sypialnia-reczniki.jpeg", alt: "Sypialnia z łóżkiem i przygotowanymi ręcznikami" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic.jpg", alt: "Łazienka z prysznicem, umywalką i lustrem" },
-  { src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz-lustro.jpeg", alt: "Łazienka z lustrem, umywalką i dekoracyjnym obrazem" },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-budynek-lake-hill.webp",
+    alt: "Budynki Lake Hill w Sosnówce",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-widok-na-sniezke.webp",
+    alt: "Widok na Śnieżkę z okolic Sosnówki",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-widok-zalew.webp",
+    alt: "Panorama Zalewu Sosnówka i okolicznych wzgórz",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-stol-zegar.webp",
+    alt: "Widok na kompleks apartamentowy nad Zalewem Sosnówka",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp",
+    alt: "Dekoracja Forest Hill na drzwiach apartamentu",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny.jpg",
+    alt: "Aneks kuchenny z płytą indukcyjną i mikrofalówką",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-reczniki.jpeg",
+    alt: "Sypialnia z łóżkiem i przygotowanymi ręcznikami",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic.jpg",
+    alt: "Łazienka z prysznicem, umywalką i lustrem",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz-lustro.jpeg",
+    alt: "Łazienka z lustrem, umywalką i dekoracyjnym obrazem",
+  },
 ];
 
 export default function SosnowkaPage() {
   return (
     <>
       <section className="relative h-[75vh] min-h-[520px] overflow-hidden">
-        <img src="/assets/hero-sosnowka-page.jpg" alt="Widok na Karkonosze i Zalew Sosnówka" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src="/assets/hero-sosnowka-page.jpg"
+          alt="Widok na Karkonosze i Zalew Sosnówka"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] opacity-90">Karkonosze</p>
@@ -134,7 +180,10 @@ export default function SosnowkaPage() {
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((b) => (
-              <div key={b.label} className="interactive-card flex min-h-28 items-center gap-4 rounded-xl bg-card p-6 shadow-sm">
+              <div
+                key={b.label}
+                className="interactive-card flex min-h-28 items-center gap-4 rounded-xl bg-card p-6 shadow-sm"
+              >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <b.icon className="h-5 w-5" />
                 </div>
@@ -176,11 +225,16 @@ export default function SosnowkaPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-14 text-center">
             <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Wyposażenie</p>
-            <h2 className="font-serif text-3xl text-primary md:text-5xl">Wszystko, czego potrzebujesz</h2>
+            <h2 className="font-serif text-3xl text-primary md:text-5xl">
+              Wszystko, czego potrzebujesz
+            </h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {amenities.map((a) => (
-              <div key={a.text} className="interactive-card flex items-center gap-3 rounded-lg bg-card px-5 py-4 shadow-sm">
+              <div
+                key={a.text}
+                className="interactive-card flex items-center gap-3 rounded-lg bg-card px-5 py-4 shadow-sm"
+              >
                 <a.icon className="h-5 w-5 shrink-0 text-primary" />
                 <span className="text-sm text-foreground/85">{a.text}</span>
               </div>
@@ -193,10 +247,16 @@ export default function SosnowkaPage() {
         <div className="rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-14">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
           <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
-          <p className="mx-auto mb-8 max-w-xl opacity-85">Rezerwacja prowadzona jest przez naszego operatora, 5D Apartamenty.</p>
+          <p className="mx-auto mb-8 max-w-xl opacity-85">
+            Rezerwacja prowadzona jest przez naszego operatora, 5D Apartamenty.
+          </p>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <img src="/assets/logo-5d.jpg" alt="5D Apartamenty" className="h-20 w-auto rounded-md bg-white p-2" />
+              <img
+                src="/assets/logo-5d.jpg"
+                alt="5D Apartamenty"
+                className="h-20 w-auto rounded-md bg-white p-2"
+              />
               <a
                 href={APARTAMENTY_5D_URL}
                 target="_blank"

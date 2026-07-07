@@ -8,16 +8,32 @@ export const metadata: Metadata = {
 };
 
 const highlights = [
-  { icon: Mountain, title: "Sky Walk Świeradów", text: "Apartament tuż obok słynnej wieży widokowej." },
-  { icon: Snowflake, title: "Raj dla narciarzy", text: "Świeradów-Zdrój zimą, ze stokami w zasięgu ręki." },
-  { icon: Bike, title: "Latem na rowerze", text: "Dziesiątki tras Singletrack Glacensis i Gór Izerskich." },
+  {
+    icon: Mountain,
+    title: "Sky Walk Świeradów",
+    text: "Apartament tuż obok słynnej wieży widokowej.",
+  },
+  {
+    icon: Snowflake,
+    title: "Raj dla narciarzy",
+    text: "Świeradów-Zdrój zimą, ze stokami w zasięgu ręki.",
+  },
+  {
+    icon: Bike,
+    title: "Latem na rowerze",
+    text: "Dziesiątki tras Singletrack Glacensis i Gór Izerskich.",
+  },
 ];
 
 export default function SwieradowPage() {
   return (
     <>
       <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
-        <img src="/assets/hero-swieradow.jpg" alt="Świeradów-Zdrój i wieża Sky Walk" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src="/assets/hero-swieradow.jpg"
+          alt="Świeradów-Zdrój i wieża Sky Walk"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] opacity-90">Góry Izerskie</p>
@@ -37,9 +53,8 @@ export default function SwieradowPage() {
         </h2>
         <div className="mt-8 space-y-5 text-lg leading-relaxed text-foreground/80">
           <p>
-            Świeradów-Zdrój to nie tylko miasto uzdrowiskowe, ale też punkt wyjścia na liczne
-            szlaki Gór Izerskich, popularna wieża Sky Walk oraz raj dla narciarzy zimą i rowerzystów
-            latem.
+            Świeradów-Zdrój to nie tylko miasto uzdrowiskowe, ale też punkt wyjścia na liczne szlaki
+            Gór Izerskich, popularna wieża Sky Walk oraz raj dla narciarzy zimą i rowerzystów latem.
           </p>
           <p>
             Już wkrótce zapraszamy do naszego apartamentu w Izerskim Resorcie, tuż obok wieży Sky
@@ -76,10 +91,20 @@ function SocialSection({ title }: { title: string }) {
         Bądź pierwszym, który zobaczy gotowy apartament i odbierze najlepsze terminy.
       </p>
       <div className="flex justify-center gap-4">
-        <a href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3">
+        <a
+          href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3"
+        >
           <Facebook className="h-4 w-4" /> Facebook
         </a>
-        <a href="https://www.instagram.com/forest.hill.apartamenty?igsh=dzI5NHIyZTkycGh2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3">
+        <a
+          href="https://www.instagram.com/forest.hill.apartamenty?igsh=dzI5NHIyZTkycGh2&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3"
+        >
           <Instagram className="h-4 w-4" /> Instagram
         </a>
       </div>

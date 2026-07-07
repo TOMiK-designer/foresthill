@@ -6,7 +6,8 @@
     "src/app/**/*.d.ts",
     "src/components/next/**/*.ts",
     "src/components/next/**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -18,7 +19,7 @@
   ],
   "compilerOptions": {
     "target": "ES2022",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "lib": [
       "ES2022",

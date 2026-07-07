@@ -47,7 +47,8 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-72 bg-gradient-to-b from-transparent via-background/70 to-background" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <h1 className="font-serif max-w-4xl text-4xl leading-[1.05] md:text-6xl lg:text-7xl">
-            Twój drugi dom na szlaku <span className="italic">karkonoskich i nadmorskich</span> wspomnień
+            Twój drugi dom na szlaku <span className="italic">karkonoskich i nadmorskich</span>{" "}
+            wspomnień
           </h1>
           <p className="mt-6 font-serif text-lg italic opacity-90 md:text-2xl">
             Są miejsca, do których przyjeżdża się raz. Są takie, do których się wraca.
@@ -97,7 +98,9 @@ export default function HomePage() {
             />
           </div>
           <div className="px-1 py-2 text-center md:px-4 md:text-left">
-            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Nasi mali gospodarze</p>
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">
+              Nasi mali gospodarze
+            </p>
             <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
               Kropka i Coockie
             </h2>
@@ -150,7 +153,8 @@ export default function HomePage() {
               Poznaj nasze apartamenty i rezerwuj pobyt
             </h3>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70">
-              Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u operatora.
+              Wybierz lokalizację, sprawdź szczegóły i przejdź bezpośrednio do rezerwacji u
+              operatora.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
@@ -169,7 +173,9 @@ export default function HomePage() {
           </div>
 
           <div className="mx-auto mb-16 max-w-2xl text-center">
-            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Nasze lokalizacje</p>
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">
+              Nasze lokalizacje
+            </p>
             <h2 className="font-serif text-3xl text-primary md:text-5xl">
               Trzy miejsca, jedna obietnica
             </h2>
@@ -198,7 +204,9 @@ export default function HomePage() {
                     </span>
                   ) : null}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
-                    <p className="mb-1 text-xs uppercase tracking-[0.2em] opacity-80">{loc.region}</p>
+                    <p className="mb-1 text-xs uppercase tracking-[0.2em] opacity-80">
+                      {loc.region}
+                    </p>
                     <h3 className="font-serif text-3xl">Forest Hill {loc.name}</h3>
                   </div>
                 </div>
@@ -217,7 +225,6 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-
         </div>
       </section>
     </>
@@ -226,12 +233,7 @@ export default function HomePage() {
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-    >
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M17.2 5.2a5.1 5.1 0 0 0 3.2 1.2v3.4a8.3 8.3 0 0 1-3.7-.9v5.9a5.8 5.8 0 1 1-5.8-5.8c.4 0 .8 0 1.2.1v3.5a2.4 2.4 0 1 0 1.2 2.1V2.8h3.4c.1 1 .3 1.8.5 2.4Z" />
     </svg>
   );

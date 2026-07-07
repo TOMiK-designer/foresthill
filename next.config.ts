@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  turbopack: {},
   webpack(config) {
     config.resolve = config.resolve ?? {};
     config.resolve.symlinks = false;

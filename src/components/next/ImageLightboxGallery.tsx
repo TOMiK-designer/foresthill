@@ -27,7 +27,9 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
   }, []);
 
   const showPrevious = useCallback(() => {
-    setActiveIndex((current) => (current === null ? current : (current - 1 + images.length) % images.length));
+    setActiveIndex((current) =>
+      current === null ? current : (current - 1 + images.length) % images.length,
+    );
   }, [images.length]);
 
   const showNext = useCallback(() => {
@@ -197,7 +199,9 @@ export function ImageLightboxGallery({ images }: ImageLightboxGalleryProps) {
                 src={image.src}
                 alt={image.alt}
                 fill
-                sizes={isFeatured ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+                sizes={
+                  isFeatured ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"
+                }
                 className="interactive-card-media object-cover"
               />
               <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/45 text-white opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
