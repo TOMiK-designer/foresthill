@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
+const SWIERADOW_RESERVATION_SECTION = "/swieradow#rezerwacje";
 const GUIDES_YOUTUBE_URL = "https://youtube.com/shorts/YBj2H0gt3-U?is=vi2_CW7Tn5bHvEas";
 const GUIDES_TIKTOK_URL = "https://www.tiktok.com/@forest.hill.apart?_r=1&_t=ZN-96jzu4kbSSc";
 
@@ -162,9 +163,12 @@ export default function HomePage() {
               >
                 Rezerwuj pobyt w Sosnówce
               </Link>
-              <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
-                Świeradów-Zdrój wkrótce
-              </span>
+              <Link
+                href={SWIERADOW_RESERVATION_SECTION}
+                className="glass-button rounded-full px-6 py-3 text-sm font-medium text-primary"
+              >
+                Rezerwuj pobyt w Świeradowie
+              </Link>
               <span className="rounded-full border border-primary/15 px-6 py-3 text-sm font-medium text-primary/55">
                 Mrzeżyno wkrótce
               </span>
