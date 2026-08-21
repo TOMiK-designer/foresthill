@@ -152,9 +152,12 @@ export default function SosnowkaPage() {
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] opacity-90">Karkonosze</p>
           <h1 className="font-serif text-4xl md:text-6xl">Forest Hill Sosnówka</h1>
-          <p className="mt-4 flex items-center gap-2 text-base opacity-90 md:text-lg">
-            <MapPin className="h-4 w-4" /> Lake Hill, nad Zalewem Sosnówka
-          </p>
+          <div className="mt-4 flex flex-col items-center gap-1 opacity-90">
+            <p className="flex items-center gap-2 text-base md:text-lg">
+              <MapPin className="h-4 w-4" /> Lake Hill, nad Zalewem Sosnówka
+            </p>
+            <p className="text-sm md:text-base">ul. Tyrolska 2I</p>
+          </div>
         </div>
       </section>
 

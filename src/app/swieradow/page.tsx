@@ -168,9 +168,12 @@ export default function SwieradowPage() {
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
           <p className="mb-3 text-sm uppercase tracking-[0.3em] opacity-90">Góry Izerskie</p>
           <h1 className="font-serif text-4xl md:text-6xl">Forest Hill Świeradów-Zdrój</h1>
-          <p className="mt-4 flex items-center gap-2 text-base opacity-90 md:text-lg">
-            <MapPin className="h-4 w-4" /> Izerski Resort, obok wieży Sky Walk
-          </p>
+          <div className="mt-4 flex flex-col items-center gap-1 opacity-90">
+            <p className="flex items-center gap-2 text-base md:text-lg">
+              <MapPin className="h-4 w-4" /> Izerski Resort, obok wieży Sky Walk
+            </p>
+            <p className="text-sm md:text-base">ul. Kilińskiego 2C</p>
+          </div>
         </div>
       </section>
 
