@@ -17,19 +17,17 @@ export function SiteFooter() {
           </Link>
           <h3 className="font-serif text-2xl mb-3">Forest Hill Apartamenty</h3>
           <p className="text-sm leading-relaxed opacity-80">
-            Twój drugi dom na szlaku karkonoskich i nadmorskich wspomnień.{" "}
-            <FooterTextLink href="/sosnowka">Sosnówka</FooterTextLink>
-            {" · "}
-            <FooterTextLink href="/swieradow">Świeradów-Zdrój</FooterTextLink>
-            {" · "}
-            <FooterTextLink href="/mrzezyno">Mrzeżyno</FooterTextLink>.
+            <span className="block">
+              Twój drugi dom na szlaku karkonoskich, izerskich i&nbsp;nadmorskich wspomnień.
+            </span>
+            <span className="block">
+              <FooterTextLink href="/sosnowka">Sosnówka</FooterTextLink>
+              {" · "}
+              <FooterTextLink href="/swieradow">Świeradów-Zdrój</FooterTextLink>
+              {" · "}
+              <FooterTextLink href="/mrzezyno">Mrzeżyno</FooterTextLink>.
+            </span>
           </p>
-          <Link
-            href="/kontakt"
-            className="mt-5 inline-flex text-sm font-medium underline-offset-4 hover:underline"
-          >
-            Kontakt
-          </Link>
         </div>
         <div>
           <FooterColumnTitle>Śledź nas</FooterColumnTitle>

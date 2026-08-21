@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
 import {
+  Armchair,
   ArrowRight,
+  Bath,
+  Bed,
   Bike,
-  Facebook,
-  Instagram,
+  Car,
+  Coffee,
   MapPin,
   Mountain,
+  Sparkles,
   Snowflake,
   Star,
+  Tv,
+  Waves,
+  Wifi,
+  Wind,
+  ShieldCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Forest Hill Świeradów-Zdrój — apartament w Górach Izerskich",
   description:
-    "Wkrótce luksusowy apartament w Izerskim Resorcie tuż obok wieży Sky Walk. Sauna, narciarnia, rowerownia.",
+    "Apartament Forest Hill Świeradów-Zdrój w Izerskim Resorcie tuż obok wieży Sky Walk. Sauna, narciarnia, rowerownia i podziemne miejsce postojowe.",
 };
 
 const highlights = [
@@ -34,7 +43,43 @@ const highlights = [
   },
 ];
 
+const benefits = [
+  { icon: ShieldCheck, label: "Prywatność" },
+  { icon: Armchair, label: "Przestrzeń, w której naprawdę można odpocząć" },
+  { icon: Wind, label: "Brak hałasu ulicy" },
+  { icon: Car, label: "Podziemne miejsce parkingowe w cenie" },
+  { icon: Waves, label: "Możliwość korzystania z sauny w budynku" },
+  { icon: Bike, label: "Możliwość korzystania z rowerowni i narciarni" },
+];
+
+const facts = [
+  { label: "Metraż", value: "26 m²" },
+  { label: "Piętro", value: "1 (winda)" },
+  { label: "Pokoje", value: "Studio + łazienka" },
+  { label: "Maks. osób", value: "4" },
+];
+
+const amenities = [
+  { icon: Bed, text: "1 podwójne łóżko" },
+  { icon: Bed, text: "2-osobowa rozkładana pełnowymiarowa sofa" },
+  { icon: Bath, text: "Łazienka z prysznicem i WC" },
+  { icon: Coffee, text: "Płyta indukcyjna 2-palnikowa" },
+  { icon: Coffee, text: "Lodówka" },
+  { icon: Coffee, text: "Piekarnik z kuchenką mikrofalową" },
+  { icon: Coffee, text: "Czajnik" },
+  { icon: Coffee, text: "Ekspres ciśnieniowy" },
+  { icon: Tv, text: "TV z płaskim ekranem, Smart TV, platformy streamingowe" },
+  { icon: Sparkles, text: "Odkurzacz" },
+  { icon: Sparkles, text: "Deska do prasowania" },
+  { icon: Sparkles, text: "Żelazko" },
+  { icon: Sparkles, text: "Suszarka do włosów" },
+  { icon: Wifi, text: "Bezpłatne WiFi" },
+  { icon: Car, text: "Miejsce parkingowe podziemne w cenie" },
+];
+
 const GOOGLE_REVIEW_URL = "https://share.google/QciNGlYuBX8J88drd";
+const IZERSKIE_URL = "https://izerskie.com.pl/apartament/forest-hill/";
+const BOOKING_URL = "";
 
 export default function SwieradowPage() {
   return (
@@ -55,10 +100,8 @@ export default function SwieradowPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <span className="mb-6 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-accent">
-          Już wkrótce
-        </span>
+      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">O lokalizacji</p>
         <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
           Miasto uzdrowiskowe i brama Gór Izerskich
         </h2>
@@ -68,9 +111,13 @@ export default function SwieradowPage() {
             Gór Izerskich, popularna wieża Sky Walk oraz raj dla narciarzy zimą i rowerzystów latem.
           </p>
           <p>
-            Już wkrótce zapraszamy do naszego apartamentu w Izerskim Resorcie, tuż obok wieży Sky
-            Walk. Goście będą mieli dostęp do sauny, narciarni i rowerowni oraz podziemnego miejsca
-            postojowego.
+            Serdecznie zapraszamy do naszego apartamentu w Izerskim Resorcie, tuż obok wieży Sky
+            Walk. Nasi Goście, w ramach pobytów, mogą korzystać z sauny, narciarni i rowerowni oraz
+            podziemnego miejsca postojowego.
+          </p>
+          <p>
+            Izerski Resort, to miejsce szczególne. Tuż przy wieży Sky Walk, z dala od zatłoczonych
+            ulic i hałasu turystów.
           </p>
         </div>
       </section>
@@ -86,6 +133,137 @@ export default function SwieradowPage() {
               <p className="text-sm leading-relaxed text-foreground/75">{h.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Pobyt</p>
+        <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
+          Spokój, prywatność i hotelowy standard
+        </h2>
+        <div className="mt-8 space-y-5 text-lg leading-relaxed text-foreground/80">
+          <p>
+            Rezerwując pobyt w naszym apartamencie, otrzymasz spokój, prywatność, hotelowy standard,
+            a jednocześnie bliskość szlaków oraz licznych atrakcji Świeradowa-Zdroju i okolic.
+          </p>
+          <p>
+            <strong>Forest Hill Świeradów-Zdrój</strong> to kameralne studio, wykończone w wysokim
+            standardzie, bogato wyposażone, przeznaczone dla maksymalnie 4 osób, zlokalizowane na
+            pierwszym piętrze budynku apartamentowego z windą, od strony wieży Sky Walk.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="font-serif mb-12 max-w-2xl text-3xl text-primary md:text-4xl">
+            Dzięki tej lokalizacji otrzymasz
+          </h2>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {benefits.map((b) => (
+              <div
+                key={b.label}
+                className="interactive-card flex min-h-28 items-center gap-4 rounded-xl bg-card p-6 shadow-sm"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <b.icon className="h-5 w-5" />
+                </div>
+                <p className="leading-snug text-foreground/85">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Apartament</p>
+            <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
+              Kameralne studio przy Sky Walk
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+              Studio z aneksem kuchennym oraz łazienką z WC mieści się w Izerskim Resorcie. Goście
+              mają do dyspozycji bezpłatne WiFi oraz podziemne miejsce parkingowe w cenie.
+            </p>
+          </div>
+          <dl className="grid grid-cols-2 gap-4">
+            {facts.map((f) => (
+              <div key={f.label} className="rounded-2xl border border-border bg-cream p-6">
+                <dt className="text-xs uppercase tracking-[0.2em] text-accent">{f.label}</dt>
+                <dd className="mt-2 font-serif text-3xl text-primary">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-14 text-center">
+            <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Wyposażenie</p>
+            <h2 className="font-serif text-3xl text-primary md:text-5xl">
+              Wszystko, czego potrzebujesz
+            </h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {amenities.map((a) => (
+              <div
+                key={a.text}
+                className="interactive-card flex items-center gap-3 rounded-lg bg-card px-5 py-4 shadow-sm"
+              >
+                <a.icon className="h-5 w-5 shrink-0 text-primary" />
+                <span className="text-sm text-foreground/85">{a.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="rezerwacje" className="mx-auto max-w-5xl scroll-mt-28 px-6 py-20 md:py-28">
+        <div className="rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-14">
+          <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
+          <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
+          <p className="mx-auto mb-8 max-w-xl opacity-85">
+            Rezerwacja prowadzona jest przez naszego operatora, Izerskie.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex h-20 w-56 items-center justify-center rounded-md bg-white px-5 shadow-lg shadow-black/10">
+                <img
+                  src="/assets/apartamenty-izerskie-logo.svg"
+                  alt="Apartamenty Izerskie"
+                  className="h-12 w-auto"
+                />
+              </div>
+              <a
+                href={IZERSKIE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+              >
+                Przejdź do rezerwacji
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <a
+                href={BOOKING_URL}
+                aria-label="Zarezerwuj apartament Forest Hill Świeradów-Zdrój na Booking.com"
+                className="inline-flex h-20 w-56 items-center justify-center rounded-md bg-white px-5 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              >
+                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-10 w-auto" />
+              </a>
+              <a
+                href={BOOKING_URL}
+                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+              >
+                Rezerwuj na Booking.com
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -125,37 +303,6 @@ export default function SwieradowPage() {
           </div>
         </div>
       </section>
-
-      <SocialSection title="Śledź nas i obserwuj postęp prac wykończeniowych" />
     </>
-  );
-}
-
-function SocialSection({ title }: { title: string }) {
-  return (
-    <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-      <h2 className="font-serif mb-4 text-3xl text-primary md:text-4xl">{title}</h2>
-      <p className="mb-8 text-foreground/75">
-        Bądź pierwszym, który zobaczy gotowy apartament i odbierze najlepsze terminy.
-      </p>
-      <div className="flex justify-center gap-4">
-        <a
-          href="https://www.facebook.com/share/1B31HGFq6V/?mibextid=wwXIfr"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3"
-        >
-          <Facebook className="h-4 w-4" /> Facebook
-        </a>
-        <a
-          href="https://www.instagram.com/forest.hill.apartamenty?igsh=dzI5NHIyZTkycGh2&utm_source=qr"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="glass-button glass-button-social-green inline-flex items-center gap-2 rounded-full px-6 py-3"
-        >
-          <Instagram className="h-4 w-4" /> Instagram
-        </a>
-      </div>
-    </section>
   );
 }

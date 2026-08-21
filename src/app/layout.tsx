@@ -12,7 +12,7 @@ import { SiteHeader } from "@/components/next/SiteHeader";
 export const metadata: Metadata = {
   title: "Forest Hill Apartamenty — Karkonosze, Góry Izerskie, Bałtyk",
   description:
-    "Luksusowe apartamenty Forest Hill w Sosnówce, Świeradowie-Zdroju i Mrzeżynie. Twój drugi dom na szlaku karkonoskich i nadmorskich wspomnień.",
+    "Luksusowe apartamenty Forest Hill w Sosnówce, Świeradowie-Zdroju i Mrzeżynie. Twój drugi dom na szlaku karkonoskich, izerskich i nadmorskich wspomnień.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
