@@ -19,9 +19,8 @@ const locations = [
     name: "Świeradów-Zdrój",
     region: "Góry Izerskie",
     image: "/assets/hero-swieradow.jpg",
-    soon: true,
     description:
-      "Wkrótce apartament w Izerskim Resorcie, tuż obok wieży Sky Walk. Sauna, narciarnia, rowerownia.",
+      "Apartament w Izerskim Resorcie, tuż obok wieży Sky Walk. Sauna, narciarnia, rowerownia.",
   },
   {
     href: "/mrzezyno",
