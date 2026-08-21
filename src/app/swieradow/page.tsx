@@ -4,13 +4,21 @@ import {
   Armchair,
   ArrowRight,
   Bath,
-  Bed,
+  BedDouble,
   Bike,
+  BrushCleaning,
   Car,
   Coffee,
+  CookingPot,
+  CupSoda,
+  Fan,
   MapPin,
+  Microwave,
   Mountain,
-  Sparkles,
+  PanelTop,
+  Refrigerator,
+  Shirt,
+  Sofa,
   Snowflake,
   Star,
   Tv,
@@ -61,19 +69,19 @@ const facts = [
 ];
 
 const amenities = [
-  { icon: Bed, text: "1 podwójne łóżko" },
-  { icon: Bed, text: "2-osobowa rozkładana pełnowymiarowa sofa" },
+  { icon: BedDouble, text: "1 podwójne łóżko" },
+  { icon: Sofa, text: "2-osobowa rozkładana pełnowymiarowa sofa" },
   { icon: Bath, text: "Łazienka z prysznicem i WC" },
-  { icon: Coffee, text: "Płyta indukcyjna 2-palnikowa" },
-  { icon: Coffee, text: "Lodówka" },
-  { icon: Coffee, text: "Piekarnik z kuchenką mikrofalową" },
-  { icon: Coffee, text: "Czajnik" },
+  { icon: CookingPot, text: "Płyta indukcyjna 2-palnikowa" },
+  { icon: Refrigerator, text: "Lodówka" },
+  { icon: Microwave, text: "Piekarnik z kuchenką mikrofalową" },
+  { icon: CupSoda, text: "Czajnik" },
   { icon: Coffee, text: "Ekspres ciśnieniowy" },
   { icon: Tv, text: "TV z płaskim ekranem, Smart TV, platformy streamingowe" },
-  { icon: Sparkles, text: "Odkurzacz" },
-  { icon: Sparkles, text: "Deska do prasowania" },
-  { icon: Sparkles, text: "Żelazko" },
-  { icon: Sparkles, text: "Suszarka do włosów" },
+  { icon: BrushCleaning, text: "Odkurzacz" },
+  { icon: PanelTop, text: "Deska do prasowania" },
+  { icon: Shirt, text: "Żelazko" },
+  { icon: Fan, text: "Suszarka do włosów" },
   { icon: Wifi, text: "Bezpłatne WiFi" },
   { icon: Car, text: "Miejsce parkingowe podziemne w cenie" },
 ];
@@ -166,7 +174,7 @@ export default function SwieradowPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
         <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">O lokalizacji</p>
         <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
           Miasto uzdrowiskowe i brama Gór Izerskich

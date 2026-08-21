@@ -12,7 +12,9 @@ import {
   Star,
   TreePine,
   Tv,
+  UtensilsCrossed,
   Volume,
+  Waves,
   Wifi,
   Wind,
 } from "lucide-react";
@@ -38,6 +40,11 @@ const benefits = [
   { icon: TreePine, label: "Kojący widok na zielony las" },
   { icon: PawPrint, label: "Pobyt z pupilem mile widziany" },
   { icon: Wind, label: "Przyjemny chłód latem, bez ciągłego szumu klimatyzacji" },
+  {
+    icon: Waves,
+    label: "Dostęp do basenów, strefy saun i siłowni (dodatkowo płatne)",
+  },
+  { icon: UtensilsCrossed, label: "Bliskość restauracji i pizzerii w budynku" },
 ];
 
 const facts = [
@@ -151,7 +158,7 @@ export default function SosnowkaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
         <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">O lokalizacji</p>
         <h2 className="font-serif text-3xl leading-tight text-primary md:text-5xl">
           Sosnówka koło Karpacza to miejsce szczególne
