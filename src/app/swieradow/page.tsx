@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ImageLightboxGallery } from "@/components/next/ImageLightboxGallery";
 import {
   ArrowRight,
   Bike,
@@ -35,6 +36,71 @@ const highlights = [
 ];
 
 const GOOGLE_REVIEW_URL = "https://share.google/QciNGlYuBX8J88drd";
+
+const galleryImages = [
+  {
+    src: "/assets/swieradow/gallery/swieradow-studio-aneks-kuchenny.webp",
+    alt: "Jasne studio z aneksem kuchennym, częścią wypoczynkową i łóżkiem",
+    featured: true,
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-studio-lozko-aneks.webp",
+    alt: "Studio z podwójnym łóżkiem, aneksem kuchennym i stołem",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-sypialnia.webp",
+    alt: "Podwójne łóżko z przygotowaną pościelą i ręcznikami",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-aneks-kuchenny.webp",
+    alt: "Nowoczesny aneks kuchenny z piekarnikiem i ekspresem do kawy",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-lazienka-pralka-prysznic.webp",
+    alt: "Łazienka z prysznicem, umywalką i pralką",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-lazienka-prysznic.webp",
+    alt: "Kabina prysznicowa i umywalka w łazience",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-jadalnia-kwiaty.webp",
+    alt: "Nakryty stół z kwiatami w apartamencie",
+    featured: true,
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-lazienka-lustro.webp",
+    alt: "Podświetlane lustro i umywalka w łazience",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-lozko-detal.webp",
+    alt: "Tapicerowany zagłówek i oświetlenie przy łóżku",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-lampa-detal.webp",
+    alt: "Dekoracyjna lampa na drewnianej ścianie",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-kwiaty-aneks.webp",
+    alt: "Kwiaty i ekspres do kawy w aneksie kuchennym",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-sniadanie-kawa.webp",
+    alt: "Świeże pieczywo i kawa przygotowane dla Gości",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-przewodniki-izerskie.webp",
+    alt: "Przewodniki po Karkonoszach i Górach Izerskich",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-izerski-resort-sky-walk.webp",
+    alt: "Izerski Resort i wieża Sky Walk w otoczeniu Gór Izerskich",
+  },
+  {
+    src: "/assets/swieradow/gallery/swieradow-widok-resort-sky-walk.webp",
+    alt: "Widok na Izerski Resort i wieżę Sky Walk",
+  },
+];
 
 export default function SwieradowPage() {
   return (
@@ -87,6 +153,10 @@ export default function SwieradowPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <ImageLightboxGallery images={galleryImages} />
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
