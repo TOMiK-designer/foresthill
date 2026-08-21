@@ -88,7 +88,6 @@ const amenities = [
 
 const GOOGLE_REVIEW_URL = "https://share.google/QciNGlYuBX8J88drd";
 const IZERSKIE_URL = "https://izerskie.com.pl/apartament/forest-hill/";
-const BOOKING_URL = "";
 
 const galleryImages = [
   {
@@ -306,9 +305,9 @@ export default function SwieradowPage() {
           <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
           <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
           <p className="mx-auto mb-8 max-w-xl opacity-85">
-            Rezerwacja prowadzona jest przez naszego operatora, Izerskie.
+            Rezerwacja prowadzona jest przez naszego operatora, Apartamenty Izerskie.
           </p>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="mx-auto max-w-xl">
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="flex h-20 w-56 items-center justify-center rounded-md bg-white px-5 shadow-lg shadow-black/10">
                 <img
@@ -324,23 +323,6 @@ export default function SwieradowPage() {
                 className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
               >
                 Przejdź do rezerwacji
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <a
-                href={BOOKING_URL}
-                aria-label="Zarezerwuj apartament Forest Hill Świeradów-Zdrój na Booking.com"
-                className="inline-flex h-20 w-56 items-center justify-center rounded-md bg-white px-5 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-              >
-                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-10 w-auto" />
-              </a>
-              <a
-                href={BOOKING_URL}
-                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
-              >
-                Rezerwuj na Booking.com
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
