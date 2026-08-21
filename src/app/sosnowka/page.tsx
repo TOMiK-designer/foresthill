@@ -45,7 +45,7 @@ const benefits = [
     icon: Waves,
     label: "Dostęp do basenów, strefy saun i siłowni (dodatkowo płatne)",
   },
-  { icon: UtensilsCrossed, label: "Bliskość restauracji i pizzerii w budynku" },
+  { icon: UtensilsCrossed, label: "Bliskość restauracji oraz pizzeria w budynku" },
 ];
 
 const facts = [
