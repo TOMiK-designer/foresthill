@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const SOSNOWKA_RESERVATION_SECTION = "/sosnowka#rezerwacje";
 const SWIERADOW_RESERVATION_SECTION = "/swieradow#rezerwacje";
@@ -38,10 +39,13 @@ export default function HomePage() {
   return (
     <>
       <section className="relative h-[88vh] min-h-[600px] w-full overflow-hidden">
-        <img
+        <Image
           src="/assets/hero-main.jpg"
           alt="Karkonoski las o poranku"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/35 to-black/55" />
         <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-72 bg-gradient-to-b from-transparent via-background/70 to-background" />
@@ -91,9 +95,12 @@ export default function HomePage() {
       <section className="bg-background px-6 pb-20 md:pb-28">
         <div className="mx-auto grid max-w-5xl items-center gap-8 rounded-2xl bg-card p-5 shadow-sm md:grid-cols-[0.95fr_1.05fr] md:p-8">
           <div className="mx-auto w-full max-w-sm overflow-hidden rounded-xl md:max-w-[330px]">
-            <img
+            <Image
               src="/assets/kropka-cookie-przewodniczki.jpeg"
               alt="Kropka i Coockie na kanapie"
+              width={660}
+              height={825}
+              sizes="(min-width: 768px) 330px, 384px"
               className="h-full w-full object-cover"
             />
           </div>

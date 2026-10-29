@@ -11,6 +11,8 @@ export function SiteFooter() {
           <Link href="/" className="mb-5 inline-flex" aria-label="Forest Hill Apartamenty">
             <img
               src="/assets/logo-footer-white.svg"
+              width={351}
+              height={83}
               alt="Forest Hill Apartamenty"
               className="h-16 w-auto"
             />

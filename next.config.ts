@@ -22,8 +22,27 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: { formats: ["image/avif", "image/webp"] },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.foresthillapartamenty.pl" }],
+        destination: "https://foresthillapartamenty.pl/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/assets/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+    ];
   },
   turbopack: {},
   webpack(config) {

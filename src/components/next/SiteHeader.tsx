@@ -59,6 +59,8 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3" aria-label="Forest Hill Apartamenty">
           <img
             src={logoSrc}
+            width={351}
+            height={83}
             alt="Forest Hill Apartamenty"
             className="h-12 w-auto max-w-[225px] object-contain sm:h-12 sm:max-w-[260px]"
           />

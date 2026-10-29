@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ImageLightboxGallery } from "@/components/next/ImageLightboxGallery";
 import { Bath, Facebook, Instagram, MapPin, Sun, TreePine, Waves } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Forest Hill Mrzeżyno — apartament nad Bałtykiem",
@@ -50,10 +51,13 @@ export default function MrzezynoPage() {
   return (
     <>
       <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
-        <img
+        <Image
           src="/assets/hero-mrzezyno.jpg"
           alt="Plaża w Mrzeżynie o zachodzie słońca"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">

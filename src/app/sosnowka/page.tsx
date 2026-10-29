@@ -19,6 +19,7 @@ import {
   Wifi,
   Wind,
 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Forest Hill Sosnówka — apartament nad Zalewem Sosnówka",
@@ -144,10 +145,13 @@ export default function SosnowkaPage() {
   return (
     <>
       <section className="relative h-[75vh] min-h-[520px] overflow-hidden">
-        <img
+        <Image
           src="/assets/hero-sosnowka-page.jpg"
           alt="Widok na Karkonosze i Zalew Sosnówka"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-primary-foreground">
@@ -265,6 +269,8 @@ export default function SosnowkaPage() {
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
               <img
                 src="/assets/logo-5d.jpg"
+                width={721}
+                height={1218}
                 alt="5D Apartamenty"
                 className="h-20 w-auto rounded-md bg-white p-2"
               />
@@ -287,7 +293,13 @@ export default function SosnowkaPage() {
                 aria-label="Zarezerwuj apartament Forest Hill Sosnówka na Booking.com"
                 className="inline-flex h-20 items-center rounded-md bg-white px-6 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
-                <img src="/assets/booking-com-logo.svg" alt="Booking.com" className="h-10 w-auto" />
+                <img
+                  src="/assets/booking-com-logo.svg"
+                  alt="Booking.com"
+                  width={41}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </a>
               <a
                 href={BOOKING_URL}
