@@ -202,10 +202,12 @@ export default function HomePage() {
                 className="interactive-card group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
+                  <Image
                     src={loc.image}
                     alt={`Forest Hill ${loc.name}`}
-                    className="interactive-card-media h-full w-full object-cover"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="interactive-card-media object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
                   {loc.soon ? (

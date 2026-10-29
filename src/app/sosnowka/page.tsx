@@ -267,10 +267,11 @@ export default function SosnowkaPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <img
+              <Image
                 src="/assets/logo-5d.jpg"
                 width={721}
                 height={1218}
+                sizes="96px"
                 alt="5D Apartamenty"
                 className="h-20 w-auto rounded-md bg-white p-2"
               />
