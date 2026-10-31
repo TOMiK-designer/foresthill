@@ -31,6 +31,13 @@ const BOOKING_URL =
   "https://www.booking.com/hotel/pl/apartament-forest-hill-sosnowka-d114-5d-apartments.pl.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaLYBiAEBmAEzuAEHyAEN2AED6AEB-AEBiAIBqAIBuAKo4srQBsACAdICJDMzOWFjOWY5LWM0ZjAtNDVkOC1iNjg5LTYxMDA1YmRmOTBlYtgCAeACAQ&sid=cf9b14638fdf3d22e12a58210cb11761&all_sr_blocks=1627752001_433410955_2_0_0&checkin=2026-05-29&checkout=2026-05-31&dest_id=16277520&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1627752001_433410955_2_0_0&hpos=1&matching_block_id=1627752001_433410955_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1627752001_433410955_2_0_0__83100&srepoch=1779609924&srpvid=9c4f38e0528d05b1&type=total&ucfs=1&";
 const APARTAMENTY_5D_URL =
   "https://apartamenty5d.pl/offer/283/Apartament-Forest-Hill-Sosnowka-D4106-5D-Apartments";
+const IZERSKIE_URL = "https://izerskie.com.pl/apartament/forest-hill-sosnowka/";
+
+// 5D Apartamenty obsługuje pobyty do końca listopada 2026, potem tylko Apartamenty Izerskie.
+const OPERATOR_5D_END = new Date("2026-12-01T00:00:00+01:00");
+
+// Strona odświeża się co godzinę, żeby sekcja rezerwacji przełączyła się sama po OPERATOR_5D_END.
+export const revalidate = 3600;
 
 const GOOGLE_REVIEW_URL = "https://share.google/bTWzGiwSGJcQv9Bhk";
 
@@ -74,34 +81,54 @@ const amenities = [
 
 const galleryImages = [
   {
-    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-przygotowana.jpeg",
-    alt: "Sypialnia z przygotowanym łóżkiem i ręcznikami",
+    src: "/assets/sosnowka/gallery/sosnowka-salon-jadalnia-balkon.webp",
+    alt: "Salon z jadalnią, kącikiem kawowym i wyjściem na balkon",
     featured: true,
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-salon-jadalnia-nowy.jpeg",
-    alt: "Salon z kanapą, stołem i zegarem",
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-okno-las.webp",
+    alt: "Sypialnia z podwójnym łóżkiem i dużym oknem z widokiem na las",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-balkon-las.webp",
-    alt: "Balkon apartamentu z widokiem na las",
+    src: "/assets/sosnowka/gallery/sosnowka-balkon-widok-las.webp",
+    alt: "Balkon z meblami i widokiem na las",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-salon-kanapa.jpeg",
-    alt: "Kanapa i kącik wypoczynkowy w salonie",
+    src: "/assets/sosnowka/gallery/sosnowka-apartament-przedpokoj.webp",
+    alt: "Widok z przedpokoju na sypialnię i salon",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-salon-perspektywa.jpeg",
-    alt: "Salon z sofą i widokiem na aneks kuchenny",
+    src: "/assets/sosnowka/gallery/sosnowka-salon-zegar-sofa.webp",
+    alt: "Salon z sofą, stołem i zegarem ściennym",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-kubki-polka.jpeg",
-    alt: "Półka z kubkami w aneksie kuchennym",
+    src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny-wejscie.webp",
+    alt: "Aneks kuchenny z płytą indukcyjną, mikrofalówką i czajnikiem",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-resort-zalew.webp",
-    alt: "Nakryty stół z kwiatkiem i zegarem w apartamencie",
+    src: "/assets/sosnowka/gallery/sosnowka-stol-nakrycie-kwiaty.webp",
+    alt: "Nakryty stół z kwiatami w salonie",
     featured: true,
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-salon-sofa-balkon.webp",
+    alt: "Kącik wypoczynkowy z sofą i wyjściem na balkon",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-szafa.webp",
+    alt: "Sypialnia z pojemną szafą i łóżkiem",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-lozko-poduszki.webp",
+    alt: "Łóżko z poduszkami i lampkami nocnymi",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-tv-okno.webp",
+    alt: "Sypialnia z telewizorem i oknem na las",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic-walkin.webp",
+    alt: "Łazienka z prysznicem typu walk-in",
   },
   {
     src: "/assets/sosnowka/gallery/sosnowka-budynek-lake-hill.webp",
@@ -116,32 +143,40 @@ const galleryImages = [
     alt: "Panorama Zalewu Sosnówka i okolicznych wzgórz",
   },
   {
-    src: "/assets/sosnowka/gallery/sosnowka-stol-zegar.webp",
-    alt: "Widok na kompleks apartamentowy nad Zalewem Sosnówka",
-  },
-  {
     src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp",
     alt: "Dekoracja Forest Hill na drzwiach apartamentu",
   },
-  {
-    src: "/assets/sosnowka/gallery/sosnowka-aneks-kuchenny.jpg",
-    alt: "Aneks kuchenny z płytą indukcyjną i mikrofalówką",
-  },
-  {
-    src: "/assets/sosnowka/gallery/sosnowka-sypialnia-reczniki.jpeg",
-    alt: "Sypialnia z łóżkiem i przygotowanymi ręcznikami",
-  },
-  {
-    src: "/assets/sosnowka/gallery/sosnowka-lazienka-prysznic.jpg",
-    alt: "Łazienka z prysznicem, umywalką i lustrem",
-  },
-  {
-    src: "/assets/sosnowka/gallery/sosnowka-lazienka-obraz-lustro.jpeg",
-    alt: "Łazienka z lustrem, umywalką i dekoracyjnym obrazem",
-  },
 ];
 
+function IzerskieCard({ label }: { label?: string }) {
+  return (
+    <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+      {label ? <p className="text-xs uppercase tracking-[0.2em] opacity-80">{label}</p> : null}
+      <div className="flex h-20 w-56 items-center justify-center rounded-md bg-white px-5 shadow-lg shadow-black/10">
+        <img
+          src="/assets/apartamenty-izerskie-logo.svg"
+          width={212}
+          height={48}
+          alt="Apartamenty Izerskie"
+          className="h-12 w-auto"
+        />
+      </div>
+      <a
+        href={IZERSKIE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+      >
+        Przejdź do rezerwacji
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </div>
+  );
+}
+
 export default function SosnowkaPage() {
+  const is5DActive = Date.now() < OPERATOR_5D_END.getTime();
+
   return (
     <>
       <section className="relative h-[75vh] min-h-[520px] overflow-hidden">
@@ -262,57 +297,57 @@ export default function SosnowkaPage() {
         <div className="rounded-3xl bg-primary p-10 text-center text-primary-foreground md:p-14">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] opacity-80">Rezerwacja</p>
           <h2 className="font-serif mb-4 text-3xl md:text-5xl">Zarezerwuj pobyt</h2>
-          <p className="mx-auto mb-8 max-w-xl opacity-85">
-            Rezerwacja prowadzona jest przez naszego operatora, 5D Apartamenty.
-          </p>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <Image
-                src="/assets/logo-5d.jpg"
-                width={721}
-                height={1218}
-                sizes="96px"
-                alt="5D Apartamenty"
-                className="h-20 w-auto rounded-md bg-white p-2"
-              />
-              <a
-                href={APARTAMENTY_5D_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
-              >
-                Przejdź do rezerwacji
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
+          {is5DActive ? (
+            <>
+              <p className="mx-auto mb-8 max-w-xl opacity-85">
+                Zmieniamy operatora. Pobyty od 5 grudnia rezerwujesz przez Apartamenty Izerskie,
+                a pobyty do 30 listopada nadal przez 5D Apartamenty.
+              </p>
+              <div className="grid gap-6 md:grid-cols-2">
+                <IzerskieCard label="Pobyty od 5 grudnia" />
 
-            <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Zarezerwuj apartament Forest Hill Sosnówka na Booking.com"
-                className="inline-flex h-20 items-center rounded-md bg-white px-6 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-              >
-                <img
-                  src="/assets/booking-com-logo.svg"
-                  alt="Booking.com"
-                  width={41}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              </a>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
-              >
-                Rezerwuj na Booking.com
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
+                <div className="flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] opacity-80">
+                    Pobyty do 30 listopada
+                  </p>
+                  <Image
+                    src="/assets/logo-5d.jpg"
+                    width={721}
+                    height={1218}
+                    sizes="96px"
+                    alt="5D Apartamenty"
+                    className="h-20 w-auto rounded-md bg-white p-2"
+                  />
+                  <a
+                    href={APARTAMENTY_5D_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-button inline-flex items-center gap-2 rounded-full px-8 py-4 font-medium text-primary"
+                  >
+                    Rezerwuj w 5D Apartamenty
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm underline-offset-4 opacity-85 hover:underline"
+                  >
+                    lub na Booking.com
+                  </a>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="mx-auto mb-8 max-w-xl opacity-85">
+                Rezerwacja prowadzona jest przez naszego operatora, Apartamenty Izerskie.
+              </p>
+              <div className="mx-auto max-w-xl">
+                <IzerskieCard />
+              </div>
+            </>
+          )}
         </div>
       </section>
 
