@@ -146,6 +146,14 @@ const galleryImages = [
     src: "/assets/sosnowka/gallery/sosnowka-dekoracja-forest-hill.webp",
     alt: "Dekoracja Forest Hill na drzwiach apartamentu",
   },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-basen-kryty.webp",
+    alt: "Kryty basen w kompleksie Lake Hill z widokiem na las",
+  },
+  {
+    src: "/assets/sosnowka/gallery/sosnowka-sauna.webp",
+    alt: "Sauna w strefie wellness kompleksu Lake Hill",
+  },
 ];
 
 function IzerskieCard({ label }: { label?: string }) {
